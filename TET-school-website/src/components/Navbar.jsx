@@ -22,9 +22,9 @@ const Navbar = () => {
             onClick={closeAllDropdowns}
           >
             <div className="w-10 h-10 bg-primary-600 rounded-full flex items-center justify-center">
-              <span className="text-white font-bold text-xl">TET</span>
+              <span className="text-white font-bold text-xl">TPS</span>
             </div>
-            <span className="text-xl font-bold text-gray-800">Excellence School</span>
+            <span className="text-xl font-bold text-gray-800">Talent Public School</span>
           </Link>
 
           {/* Desktop Navigation */}
