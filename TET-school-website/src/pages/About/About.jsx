@@ -1,6 +1,7 @@
 import { useEffect } from 'react';
 import { useSearchParams } from 'react-router-dom';
 import OurSchool from './OurSchool';
+import ManagementTeam from './ManagementTeam';
 import VisionMission from './VisionMission';
 
 const About = () => {
@@ -34,6 +35,11 @@ const About = () => {
         {/* Our School Section */}
         <div id="our-school" className="scroll-mt-20">
           <OurSchool />
+        </div>
+
+        {/* Management Team Section */}
+        <div id="management-team" className="scroll-mt-20">
+          <ManagementTeam />
         </div>
 
         {/* Vision & Mission Section */}

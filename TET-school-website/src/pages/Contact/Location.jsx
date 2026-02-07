@@ -1,7 +1,7 @@
 const Location = () => {
   return (
-    <div className="bg-white rounded-lg shadow-md p-8">
-      <div className="flex items-center mb-6">
+    <div className="bg-white rounded-xl sm:rounded-2xl shadow-lg p-6 sm:p-8">
+      <div className="flex items-center mb-6 sm:mb-8">
         <div className="w-16 h-16 bg-primary-100 rounded-full flex items-center justify-center mr-4">
           <svg className="w-8 h-8 text-primary-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
@@ -14,9 +14,9 @@ const Location = () => {
         </div>
       </div>
 
-      <div className="space-y-6">
+      <div className="space-y-6 sm:space-y-8">
         {/* Address */}
-        <div className="border-l-4 border-primary-600 pl-6 py-3">
+        <div className="border-l-4 border-primary-600 pl-4 sm:pl-6 py-3 sm:py-4">
           <h3 className="font-semibold text-lg text-gray-800 mb-2">Campus Address</h3>
           <p className="text-gray-700 text-lg">
             <strong>Talent Public School</strong><br />
@@ -47,7 +47,7 @@ const Location = () => {
         </div>
 
         {/* School Hours */}
-        <div className="bg-primary-50 p-6 rounded-lg">
+        <div className="bg-primary-50 p-4 sm:p-6 rounded-lg">
           <h3 className="font-semibold text-gray-800 mb-4">School Hours</h3>
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
             <div>
@@ -71,7 +71,7 @@ const Location = () => {
 
         {/* Parking & Accessibility */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-          <div className="bg-white border border-gray-200 p-6 rounded-lg">
+          <div className="bg-white border border-gray-200 p-4 sm:p-6 rounded-lg">
             <h3 className="font-semibold text-gray-800 mb-3 flex items-center">
               <svg className="w-6 h-6 text-primary-600 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 7h12m0 0l-4-4m4 4l-4 4m0 6H4m0 0l4 4m-4-4l4-4" />
@@ -100,7 +100,7 @@ const Location = () => {
             </ul>
           </div>
 
-          <div className="bg-white border border-gray-200 p-6 rounded-lg">
+          <div className="bg-white border border-gray-200 p-4 sm:p-6 rounded-lg">
             <h3 className="font-semibold text-gray-800 mb-3 flex items-center">
               <svg className="w-6 h-6 text-primary-600 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
@@ -131,7 +131,7 @@ const Location = () => {
         </div>
 
         {/* Directions */}
-        <div className="bg-gray-50 p-6 rounded-lg">
+        <div className="bg-gray-50 p-4 sm:p-6 rounded-lg">
           <h3 className="font-semibold text-gray-800 mb-3">Getting Here</h3>
           <div className="space-y-3 text-gray-700">
             <div>
@@ -150,7 +150,7 @@ const Location = () => {
         </div>
 
         {/* Visit Information */}
-        <div className="bg-primary-700 text-white p-6 rounded-lg">
+        <div className="bg-primary-700 text-white p-4 sm:p-6 rounded-lg">
           <h3 className="font-semibold text-xl mb-3">Planning Your Visit?</h3>
           <p className="mb-4">
             We welcome prospective students and their families to tour our campus in Hunsur. 

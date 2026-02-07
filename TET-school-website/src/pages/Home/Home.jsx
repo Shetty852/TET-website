@@ -173,7 +173,7 @@ const Home = () => {
             {features.map((feature, index) => (
               <div 
                 key={index}
-                className="group bg-white p-6 sm:p-8  rounded-xl sm:rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 border border-gray-100 hover:border-primary-200 hover:-translate-y-2"
+                className="group bg-white p-6 sm:p-8 rounded-xl sm:rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 border border-gray-100 hover:border-primary-200 hover:-translate-y-2"
               >
                 <div className="w-12 h-12 sm:w-16 sm:h-16 bg-gradient-to-br from-primary-500 to-primary-600 rounded-lg sm:rounded-xl flex items-center justify-center mb-4 sm:mb-6 text-white group-hover:scale-110 group-hover:rotate-3 transition-all duration-300 shadow-lg">
                   {feature.icon}

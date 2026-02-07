@@ -30,6 +30,11 @@ const Footer = () => {
                 </Link>
               </li>
               <li>
+                <Link to="/about?section=management-team" className="text-gray-300 hover:text-primary-400 text-sm sm:text-base transition-colors duration-200 inline-block">
+                  Management Team
+                </Link>
+              </li>
+              <li>
                 <Link to="/about?section=vision-mission" className="text-gray-300 hover:text-primary-400 text-sm sm:text-base transition-colors duration-200 inline-block">
                   Vision & Mission
                 </Link>

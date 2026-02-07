@@ -74,6 +74,13 @@ const Navbar = () => {
                       Our School
                     </Link>
                     <Link
+                      to="/about?section=management-team"
+                      className="block px-4 py-2 text-sm text-gray-700 hover:bg-primary-50 hover:text-primary-600 transition-colors duration-200"
+                      onClick={closeAllDropdowns}
+                    >
+                      Management Team
+                    </Link>
+                    <Link
                       to="/about?section=vision-mission"
                       className="block px-4 py-2 text-sm text-gray-700 hover:bg-primary-50 hover:text-primary-600 transition-colors duration-200"
                       onClick={closeAllDropdowns}
@@ -205,6 +212,16 @@ const Navbar = () => {
                     }}
                   >
                     Our School
+                  </Link>
+                  <Link
+                    to="/about?section=management-team"
+                    className="block px-3 py-2 rounded-md text-sm text-gray-600 hover:text-primary-600 hover:bg-primary-50"
+                    onClick={() => {
+                      setIsMobileMenuOpen(false);
+                      closeAllDropdowns();
+                    }}
+                  >
+                    Management Team
                   </Link>
                   <Link
                     to="/about?section=vision-mission"

@@ -1,8 +1,8 @@
 const VisionMission = () => {
   return (
-    <div className="space-y-12">
+    <div className="space-y-8 sm:space-y-12">
       {/* Hero Section */}
-      <div className="bg-gradient-to-br from-blue-600 via-blue-700 to-indigo-800 rounded-2xl shadow-2xl p-12 text-white">
+      <div className="bg-gradient-to-br from-blue-600 via-blue-700 to-indigo-800 rounded-xl sm:rounded-2xl shadow-2xl p-6 sm:p-10 lg:p-12 text-white">
         <h2 className="text-4xl md:text-5xl font-bold mb-4 text-center">Vision & Mission</h2>
         <p className="text-blue-100 text-center text-lg max-w-3xl mx-auto">
           Shaping the future through excellence in education and character development
@@ -10,8 +10,8 @@ const VisionMission = () => {
       </div>
 
       {/* Vision Section */}
-      <div className="bg-white rounded-2xl shadow-xl overflow-hidden">
-        <div className="bg-gradient-to-r from-blue-50 to-indigo-50 p-8 md:p-12">
+      <div className="bg-white rounded-xl sm:rounded-2xl shadow-xl overflow-hidden">
+        <div className="bg-gradient-to-r from-blue-50 to-indigo-50 p-6 sm:p-8 lg:p-12">
           <div className="flex items-center justify-center mb-8">
             <div className="relative">
               <div className="w-20 h-20 bg-gradient-to-br from-blue-600 to-indigo-600 rounded-2xl flex items-center justify-center shadow-lg transform rotate-6">
@@ -34,8 +34,8 @@ const VisionMission = () => {
           </p>
         </div>
         
-        <div className="p-8 md:p-12 bg-gradient-to-br from-white to-gray-50">
-          <div className="bg-white rounded-xl shadow-md p-8 border-l-4 border-blue-600">
+        <div className="p-6 sm:p-8 lg:p-12 bg-gradient-to-br from-white to-gray-50">
+          <div className="bg-white rounded-xl shadow-md p-6 sm:p-8 border-l-4 border-blue-600">
             <p className="text-gray-700 text-lg leading-relaxed">
               We envision a future where our graduates are equipped with the knowledge, skills, and 
               values necessary to thrive in an ever-changing world. We strive to create an environment 
@@ -47,8 +47,8 @@ const VisionMission = () => {
       </div>
 
       {/* Mission Section */}
-      <div className="bg-white rounded-2xl shadow-xl overflow-hidden">
-        <div className="bg-gradient-to-r from-indigo-50 to-purple-50 p-8 md:p-12">
+      <div className="bg-white rounded-xl sm:rounded-2xl shadow-xl overflow-hidden">
+        <div className="bg-gradient-to-r from-indigo-50 to-purple-50 p-6 sm:p-8 lg:p-12">
           <div className="flex items-center justify-center mb-8">
             <div className="relative">
               <div className="w-20 h-20 bg-gradient-to-br from-indigo-600 to-purple-600 rounded-2xl flex items-center justify-center shadow-lg transform -rotate-6">
@@ -69,9 +69,9 @@ const VisionMission = () => {
           </p>
         </div>
 
-        <div className="p-8 md:p-12 bg-gray-50">
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-            <div className="group bg-white rounded-xl p-8 shadow-md hover:shadow-2xl transition-all duration-300 border-t-4 border-blue-600 hover:-translate-y-1">
+        <div className="p-6 sm:p-8 lg:p-12 bg-gray-50">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 sm:gap-8">
+            <div className="group bg-white rounded-xl p-6 sm:p-8 shadow-md hover:shadow-2xl transition-all duration-300 border-t-4 border-blue-600 hover:-translate-y-1">
               <div className="flex items-center mb-4">
                 <div className="w-12 h-12 bg-gradient-to-br from-blue-600 to-blue-700 rounded-lg flex items-center justify-center mr-4 group-hover:scale-110 transition-transform duration-300">
                   <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -86,7 +86,7 @@ const VisionMission = () => {
               </p>
             </div>
 
-            <div className="group bg-white rounded-xl p-8 shadow-md hover:shadow-2xl transition-all duration-300 border-t-4 border-indigo-600 hover:-translate-y-1">
+            <div className="group bg-white rounded-xl p-6 sm:p-8 shadow-md hover:shadow-2xl transition-all duration-300 border-t-4 border-indigo-600 hover:-translate-y-1">
               <div className="flex items-center mb-4">
                 <div className="w-12 h-12 bg-gradient-to-br from-indigo-600 to-indigo-700 rounded-lg flex items-center justify-center mr-4 group-hover:scale-110 transition-transform duration-300">
                   <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -101,7 +101,7 @@ const VisionMission = () => {
               </p>
             </div>
 
-            <div className="group bg-white rounded-xl p-8 shadow-md hover:shadow-2xl transition-all duration-300 border-t-4 border-purple-600 hover:-translate-y-1">
+            <div className="group bg-white rounded-xl p-6 sm:p-8 shadow-md hover:shadow-2xl transition-all duration-300 border-t-4 border-purple-600 hover:-translate-y-1">
               <div className="flex items-center mb-4">
                 <div className="w-12 h-12 bg-gradient-to-br from-purple-600 to-purple-700 rounded-lg flex items-center justify-center mr-4 group-hover:scale-110 transition-transform duration-300">
                   <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -116,7 +116,7 @@ const VisionMission = () => {
               </p>
             </div>
 
-            <div className="group bg-white rounded-xl p-8 shadow-md hover:shadow-2xl transition-all duration-300 border-t-4 border-pink-600 hover:-translate-y-1">
+            <div className="group bg-white rounded-xl p-6 sm:p-8 shadow-md hover:shadow-2xl transition-all duration-300 border-t-4 border-pink-600 hover:-translate-y-1">
               <div className="flex items-center mb-4">
                 <div className="w-12 h-12 bg-gradient-to-br from-pink-600 to-pink-700 rounded-lg flex items-center justify-center mr-4 group-hover:scale-110 transition-transform duration-300">
                   <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -135,7 +135,7 @@ const VisionMission = () => {
       </div>
 
       {/* Core Values */}
-      <div className="bg-gradient-to-br from-gray-900 via-gray-800 to-gray-900 rounded-2xl shadow-2xl p-8 md:p-12 text-white">
+      <div className="bg-gradient-to-br from-gray-900 via-gray-800 to-gray-900 rounded-xl sm:rounded-2xl shadow-2xl p-6 sm:p-10 lg:p-12 text-white">
         <h3 className="text-3xl md:text-4xl font-bold mb-4 text-center">Our Core Values</h3>
         <p className="text-gray-300 text-center mb-12 text-lg">The principles that guide everything we do</p>
         
