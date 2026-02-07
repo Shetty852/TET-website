@@ -19,11 +19,17 @@ const Location = () => {
         <div className="border-l-4 border-primary-600 pl-6 py-3">
           <h3 className="font-semibold text-lg text-gray-800 mb-2">Campus Address</h3>
           <p className="text-gray-700 text-lg">
-            Talent Educational Trust<br />
-            Behind DD Urs College<br />
-            B M Road, Hunsur - 571105<br />
+            <strong>Talent Public School</strong><br />
+            (Talent Educational Trust)<br />
+            B M Bypass Road<br />
+            Hunsur - 571105<br />
             Karnataka, India
           </p>
+          <div className="mt-3 text-sm text-gray-600 space-y-1">
+            <p><strong>CBSE Affiliation No:</strong> 830494</p>
+            <p><strong>School Code:</strong> 45457</p>
+            <p><strong>Principal:</strong> Gulnaz Khanum N</p>
+          </div>
         </div>
 
         {/* Google Maps Embed */}
