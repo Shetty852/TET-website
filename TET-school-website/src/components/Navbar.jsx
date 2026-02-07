@@ -14,17 +14,19 @@ const Navbar = () => {
   return (
     <nav className="bg-white shadow-lg sticky top-0 z-50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex justify-between items-center h-16">
+        <div className="flex justify-between items-center h-14 sm:h-16 lg:h-20">
           {/* Logo */}
           <Link 
             to="/" 
-            className="flex items-center space-x-2"
+            className="flex items-center space-x-2 sm:space-x-3"
             onClick={closeAllDropdowns}
           >
-            <div className="w-10 h-10 bg-primary-600 rounded-full flex items-center justify-center">
-              <span className="text-white font-bold text-xl">TPS</span>
+            <div className="w-8 h-8 sm:w-10 sm:h-10 lg:w-12 lg:h-12 bg-primary-600 rounded-full flex items-center justify-center flex-shrink-0">
+              <span className="text-white font-bold text-sm sm:text-xl lg:text-2xl">TPS</span>
             </div>
-            <span className="text-xl font-bold text-gray-800">Talent Public School</span>
+            <span className="text-sm sm:text-lg lg:text-xl font-bold text-gray-800 truncate max-w-[180px] sm:max-w-none">
+              Talent Public School
+            </span>
           </Link>
 
           {/* Desktop Navigation */}
