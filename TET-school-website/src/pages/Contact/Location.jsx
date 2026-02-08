@@ -1,8 +1,8 @@
 const Location = () => {
   return (
-    <div className="bg-white rounded-xl sm:rounded-2xl shadow-lg p-6 sm:p-8">
-      <div className="flex items-center mb-6 sm:mb-8">
-        <div className="w-16 h-16 bg-primary-100 rounded-full flex items-center justify-center mr-4">
+    <div className="bg-white rounded-xl sm:rounded-2xl shadow-lg border border-gray-100 p-6 sm:p-8 animate-fadeIn transition-all duration-300 hover:shadow-2xl hover:-translate-y-1">
+      <div className="flex items-center mb-6 sm:mb-8 pb-5 border-b border-gray-100">
+        <div className="w-16 h-16 bg-primary-100 ring-4 ring-primary-50 rounded-full flex items-center justify-center mr-4 shrink-0">
           <svg className="w-8 h-8 text-primary-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
@@ -16,7 +16,7 @@ const Location = () => {
 
       <div className="space-y-6 sm:space-y-8">
         {/* Address */}
-        <div className="border-l-4 border-primary-600 pl-4 sm:pl-6 py-3 sm:py-4">
+        <div className="border border-primary-100 border-l-4 border-l-primary-600 rounded-lg pl-4 sm:pl-6 pr-4 sm:pr-6 py-3 sm:py-4 shadow-sm transition-all duration-300 hover:scale-[1.02] hover:shadow-md">
           <h3 className="font-semibold text-lg text-gray-800 mb-2">Campus Address</h3>
           <p className="text-gray-700 text-lg">
             <strong>Talent Public School</strong><br />
@@ -33,7 +33,7 @@ const Location = () => {
         </div>
 
         {/* Google Maps Embed */}
-        <div className="bg-gray-200 rounded-lg overflow-hidden shadow-lg" style={{ height: '450px' }}>
+        <div className="bg-gray-200 rounded-lg overflow-hidden border border-gray-200 shadow-lg transition-all duration-300 hover:scale-[1.01] hover:shadow-xl" style={{ height: '450px' }}>
           <iframe
             src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3897.9896!2d76.6050376!3d12.334154!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3baf7a57dda7b52b%3A0x682bc429d6d7a54!2s8JM3%2BMX9%2C%20Vijayanagar%2C%20Mysuru%2C%20Karnataka%20570017!5e0!3m2!1sen!2sin!4v1707321000000!5m2!1sen!2sin"
             width="100%"
@@ -47,7 +47,7 @@ const Location = () => {
         </div>
 
         {/* School Hours */}
-        <div className="bg-primary-50 p-4 sm:p-6 rounded-lg">
+        <div className="bg-primary-50 border border-primary-100 p-4 sm:p-6 rounded-lg shadow-sm transition-all duration-300 hover:scale-[1.01] hover:shadow-md">
           <h3 className="font-semibold text-gray-800 mb-4">School Hours</h3>
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
             <div>
@@ -71,7 +71,7 @@ const Location = () => {
 
         {/* Parking & Accessibility */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-          <div className="bg-white border border-gray-200 p-4 sm:p-6 rounded-lg">
+          <div className="bg-white border border-gray-200 p-4 sm:p-6 rounded-lg shadow-sm transition-all duration-300 hover:scale-[1.02] hover:shadow-md">
             <h3 className="font-semibold text-gray-800 mb-3 flex items-center">
               <svg className="w-6 h-6 text-primary-600 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 7h12m0 0l-4-4m4 4l-4 4m0 6H4m0 0l4 4m-4-4l4-4" />
@@ -100,7 +100,7 @@ const Location = () => {
             </ul>
           </div>
 
-          <div className="bg-white border border-gray-200 p-4 sm:p-6 rounded-lg">
+          <div className="bg-white border border-gray-200 p-4 sm:p-6 rounded-lg shadow-sm transition-all duration-300 hover:scale-[1.02] hover:shadow-md">
             <h3 className="font-semibold text-gray-800 mb-3 flex items-center">
               <svg className="w-6 h-6 text-primary-600 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
@@ -131,7 +131,7 @@ const Location = () => {
         </div>
 
         {/* Directions */}
-        <div className="bg-gray-50 p-4 sm:p-6 rounded-lg">
+        <div className="bg-gray-50 border border-gray-100 p-4 sm:p-6 rounded-lg shadow-sm transition-all duration-300 hover:scale-[1.01] hover:shadow-md">
           <h3 className="font-semibold text-gray-800 mb-3">Getting Here</h3>
           <div className="space-y-3 text-gray-700">
             <div>
@@ -150,7 +150,7 @@ const Location = () => {
         </div>
 
         {/* Visit Information */}
-        <div className="bg-primary-700 text-white p-4 sm:p-6 rounded-lg">
+        <div className="bg-primary-700 text-white p-4 sm:p-6 rounded-lg shadow-lg border border-primary-800 transition-all duration-300 hover:scale-[1.01] hover:shadow-xl">
           <h3 className="font-semibold text-xl mb-3">Planning Your Visit?</h3>
           <p className="mb-4">
             We welcome prospective students and their families to tour our campus in Hunsur. 
