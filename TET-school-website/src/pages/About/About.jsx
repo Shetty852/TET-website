@@ -4,12 +4,12 @@ import OurSchool from './OurSchool';
 import ManagementTeam from './ManagementTeam';
 import VisionMission from './VisionMission';
 import Facilities from './Facilities';
-import affiliationCert from './Assets/certificates/AFFILIATION 20256-26.png';
-import buildingSafetyCert from './Assets/certificates/BUILDING SAFETY.png';
-import drinkingWaterCert from './Assets/certificates/DRINKING WATER.png';
-import fireSafetyCert from './Assets/certificates/FIRE SAFETY.png';
-import landCert from './Assets/certificates/LAND CERTIFICATE.png';
-import selfCert from './Assets/certificates/SELF CERTIFICATE.png';
+import affiliationCert from './Assets/Certificates/AFFILIATION 20256-26.png';
+import buildingSafetyCert from './Assets/Certificates/BUILDING SAFETY.png';
+import drinkingWaterCert from './Assets/Certificates/DRINKING WATER.png';
+import fireSafetyCert from './Assets/Certificates/FIRE SAFETY.png';
+import landCert from './Assets/Certificates/LAND CERTIFICATE.png';
+import selfCert from './Assets/Certificates/SELF CERTIFICATE.png';
 
 const About = () => {
   const [searchParams] = useSearchParams();
