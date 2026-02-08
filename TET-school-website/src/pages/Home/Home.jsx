@@ -89,41 +89,44 @@ const Home = () => {
       <section className="relative bg-gradient-to-br from-primary-600 via-primary-700 to-primary-900 text-white overflow-hidden">
         {/* Decorative elements */}
         <div className="absolute inset-0 bg-grid-white/5 bg-[size:20px_20px]"></div>
-        <div className="absolute top-0 right-0 w-64 h-64 sm:w-96 sm:h-96 bg-primary-500/20 rounded-full blur-3xl"></div>
-        <div className="absolute bottom-0 left-0 w-64 h-64 sm:w-96 sm:h-96 bg-primary-400/20 rounded-full blur-3xl"></div>
+        <div className="absolute top-0 right-0 w-64 h-64 sm:w-96 sm:h-96 bg-primary-500/20 rounded-full blur-3xl animate-pulse"></div>
+        <div className="absolute bottom-0 left-0 w-64 h-64 sm:w-96 sm:h-96 bg-primary-400/20 rounded-full blur-3xl animate-pulse"></div>
+        <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-96 h-96 bg-blue-500/10 rounded-full blur-3xl animate-pulse"></div>
         
-        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 sm:py-16 md:py-24 lg:py-32">
-          <div className="text-center space-y-4 sm:space-y-6 lg:space-y-8">
-            <div className="inline-block px-3 py-1.5 sm:px-4 sm:py-2 bg-white/10 backdrop-blur-sm rounded-full text-xs sm:text-sm font-medium mb-2 sm:mb-4">
+        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-12 md:py-16">
+          <div className="text-center space-y-3 sm:space-y-4 animate-fadeIn">
+            <div className="inline-block px-3 py-1.5 sm:px-4 sm:py-2 bg-white/10 backdrop-blur-sm rounded-full text-xs sm:text-sm font-medium mb-2 sm:mb-4 hover:bg-white/20 transition-all duration-300 transform hover:scale-105 cursor-default">
               🎓 Talent Educational Trust | CBSE Affiliation No: 830494
             </div>
             
-            <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold leading-tight px-4 sm:px-0">
-              <span className="block">Talent Public School</span>
-              <span className="block bg-gradient-to-r from-primary-100 to-white bg-clip-text text-transparent mt-2">
+            <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold leading-tight px-4 sm:px-0 transform hover:scale-105 transition-transform duration-500">
+              <span className="block animate-slideInLeft">Talent Public School</span>
+              <span className="block bg-gradient-to-r from-primary-100 via-blue-100 to-purple-100 bg-clip-text text-transparent mt-2 animate-slideInRight">
                 Empowering Minds, Shaping Futures
               </span>
             </h1>
             
-            <p className="text-sm sm:text-base md:text-lg lg:text-xl xl:text-2xl max-w-4xl mx-auto text-primary-50 leading-relaxed px-4 sm:px-6">
+            <p className="text-sm sm:text-base md:text-lg lg:text-xl xl:text-2xl max-w-4xl mx-auto text-primary-50 leading-relaxed px-4 sm:px-6 animate-fadeIn">
               Located in Hunsur, Karnataka - Where quality CBSE education meets innovation. We nurture young minds from Nursery to Class 10, 
               creating confident, creative, and compassionate leaders of tomorrow.
             </p>
             
-            <div className="flex flex-col sm:flex-row justify-center gap-3 sm:gap-4 pt-2 sm:pt-4 px-4 sm:px-0">
+            <div className="flex flex-col sm:flex-row justify-center gap-3 sm:gap-4 pt-2 sm:pt-4 px-4 sm:px-0 animate-fadeIn">
               <Link
                 to="/about"
-                className="group bg-white text-primary-600 px-6 sm:px-8 py-3 sm:py-4 rounded-xl font-semibold text-base sm:text-lg hover:bg-primary-50 transition-all duration-300 shadow-xl hover:shadow-2xl hover:scale-105"
+                className="group relative overflow-hidden bg-white text-primary-600 px-6 sm:px-8 py-3 sm:py-4 rounded-xl font-semibold text-base sm:text-lg transition-all duration-300 shadow-xl hover:shadow-2xl hover:scale-105 transform"
               >
-                Discover Our Story
-                <span className="inline-block ml-2 group-hover:translate-x-1 transition-transform">→</span>
+                <span className="relative z-10">Discover Our Story</span>
+                <span className="inline-block ml-2 relative z-10 group-hover:translate-x-1 transition-transform">→</span>
+                <div className="absolute inset-0 bg-gradient-to-r from-primary-50 to-blue-50 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
               </Link>
               <Link
                 to="/contact"
-                className="group bg-primary-500/20 backdrop-blur-sm text-white px-6 sm:px-8 py-3 sm:py-4 rounded-xl font-semibold text-base sm:text-lg hover:bg-primary-500/30 transition-all duration-300 border-2 border-white/30 hover:border-white/50 shadow-xl"
+                className="group relative overflow-hidden bg-primary-500/20 backdrop-blur-sm text-white px-6 sm:px-8 py-3 sm:py-4 rounded-xl font-semibold text-base sm:text-lg transition-all duration-300 border-2 border-white/30 hover:border-white/50 shadow-xl hover:shadow-2xl hover:scale-105 transform"
               >
-                Schedule a Visit
-                <span className="inline-block ml-2 group-hover:translate-x-1 transition-transform">→</span>
+                <span className="relative z-10">Schedule a Visit</span>
+                <span className="inline-block ml-2 relative z-10 group-hover:translate-x-1 transition-transform">→</span>
+                <div className="absolute inset-0 bg-primary-500/30 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
               </Link>
             </div>
           </div>
@@ -138,13 +141,13 @@ const Home = () => {
       </section>
 
       {/* Stats Section */}
-      <section className="py-8 sm:py-12 lg:py-16 bg-gray-50">
+      <section className="py-6 sm:py-8 bg-gray-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6 lg:gap-8">
+          <div className="grid grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-4">
             {stats.map((stat, index) => (
               <div key={index} className="text-center group">
-                <div className="bg-white rounded-xl sm:rounded-2xl p-4 sm:p-6 shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-1">
-                  <div className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-primary-600 mb-1 sm:mb-2 group-hover:scale-110 transition-transform">
+                <div className="bg-gradient-to-br from-white to-primary-50/50 rounded-xl sm:rounded-2xl p-3 sm:p-4 shadow-lg hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 border border-primary-100 hover:border-primary-300 transform">
+                  <div className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold bg-gradient-to-br from-primary-600 to-blue-600 bg-clip-text text-transparent mb-1 sm:mb-2 group-hover:scale-110 transition-transform duration-300">
                     {stat.value}
                   </div>
                   <div className="text-gray-600 font-medium text-xs sm:text-sm md:text-base">
@@ -158,32 +161,38 @@ const Home = () => {
       </section>
 
       {/* Features Section */}
-      <section className="py-12 sm:py-16 lg:py-20 bg-white">
+      <section className="py-8 sm:py-10 bg-gradient-to-br from-white via-blue-50/20 to-purple-50/20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-8 sm:mb-12 lg:mb-16">
-            <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 mb-3 sm:mb-4">
+          <div className="text-center mb-6 sm:mb-8">
+            <div className="inline-block px-4 py-2 bg-gradient-to-r from-primary-500 to-blue-600 text-white rounded-full text-xs sm:text-sm font-semibold mb-3 shadow-lg transform hover:scale-105 transition-transform duration-300">
+              ✨ Our Excellence
+            </div>
+            <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold bg-gradient-to-r from-gray-900 to-primary-700 bg-clip-text text-transparent mb-2 sm:mb-3">
               Why Choose Talent Public School?
             </h2>
-            <p className="text-base sm:text-lg md:text-xl text-gray-600 max-w-3xl mx-auto px-4">
+            <p className="text-base sm:text-lg text-gray-600 max-w-3xl mx-auto px-4">
               CBSE-affiliated school providing comprehensive educational experience from Nursery to Class 10
             </p>
           </div>
           
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-5">
             {features.map((feature, index) => (
               <div 
                 key={index}
-                className="group bg-white p-6 sm:p-8 rounded-xl sm:rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 border border-gray-100 hover:border-primary-200 hover:-translate-y-2"
+                className="group relative overflow-hidden bg-gradient-to-br from-white to-primary-50/30 p-4 sm:p-5 rounded-xl sm:rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-500 border border-primary-100 hover:border-primary-300 hover:-translate-y-2 transform"
               >
-                <div className="w-12 h-12 sm:w-16 sm:h-16 bg-gradient-to-br from-primary-500 to-primary-600 rounded-lg sm:rounded-xl flex items-center justify-center mb-4 sm:mb-6 text-white group-hover:scale-110 group-hover:rotate-3 transition-all duration-300 shadow-lg">
-                  {feature.icon}
+                <div className="absolute top-0 right-0 w-24 h-24 bg-gradient-to-br from-primary-500/10 to-blue-500/10 rounded-full blur-2xl group-hover:scale-150 transition-transform duration-500"></div>
+                <div className="relative z-10">
+                  <div className="w-12 h-12 sm:w-14 sm:h-14 bg-gradient-to-br from-primary-500 to-blue-600 rounded-lg sm:rounded-xl flex items-center justify-center mb-3 sm:mb-4 text-white group-hover:scale-110 group-hover:rotate-6 transition-all duration-300 shadow-lg">
+                    {feature.icon}
+                  </div>
+                  <h3 className="text-lg sm:text-xl font-bold mb-2 sm:mb-3 bg-gradient-to-r from-gray-900 to-primary-700 bg-clip-text text-transparent group-hover:from-primary-600 group-hover:to-blue-600 transition-all duration-300">
+                    {feature.title}
+                  </h3>
+                  <p className="text-sm sm:text-base text-gray-600 leading-relaxed">
+                    {feature.description}
+                  </p>
                 </div>
-                <h3 className="text-lg sm:text-xl font-bold mb-2 sm:mb-3 text-gray-900 group-hover:text-primary-600 transition-colors">
-                  {feature.title}
-                </h3>
-                <p className="text-sm sm:text-base text-gray-600 leading-relaxed">
-                  {feature.description}
-                </p>
               </div>
             ))}
           </div>
@@ -191,10 +200,13 @@ const Home = () => {
       </section>
 
       {/* Testimonials Section */}
-      <section className="py-12 sm:py-16 lg:py-20 bg-gradient-to-br from-gray-50 to-gray-100">
+      <section className="py-8 sm:py-10 bg-gradient-to-br from-primary-50 via-blue-50 to-purple-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-8 sm:mb-12 lg:mb-16">
-            <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 mb-3 sm:mb-4">
+          <div className="text-center mb-6 sm:mb-8">
+            <div className="inline-block px-4 py-2 bg-gradient-to-r from-primary-500 to-blue-600 text-white rounded-full text-xs sm:text-sm font-semibold mb-3 shadow-lg transform hover:scale-105 transition-transform duration-300">
+              💬 Testimonials
+            </div>
+            <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold bg-gradient-to-r from-gray-900 to-primary-700 bg-clip-text text-transparent mb-2 sm:mb-3">
               What Parents Say About Us
             </h2>
             <p className="text-base sm:text-lg md:text-xl text-gray-600 max-w-3xl mx-auto px-4">
@@ -206,27 +218,30 @@ const Home = () => {
             {testimonials.map((testimonial, index) => (
               <div 
                 key={index}
-                className="bg-white p-6 sm:p-8 rounded-xl sm:rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-1"
+                className="group relative overflow-hidden bg-white p-6 sm:p-8 rounded-xl sm:rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-500 hover:-translate-y-2 transform border border-primary-200 hover:border-primary-400"
               >
-                <div className="flex items-center mb-4">
-                  <div className="w-10 h-10 sm:w-12 sm:h-12 bg-gradient-to-br from-primary-500 to-primary-600 rounded-full flex items-center justify-center text-white font-bold text-lg sm:text-xl flex-shrink-0">
-                    {testimonial.name.charAt(0)}
+                <div className="absolute top-0 right-0 w-32 h-32 bg-gradient-to-br from-primary-500/10 to-blue-500/10 rounded-full blur-3xl group-hover:scale-150 transition-transform duration-500"></div>
+                <div className="relative z-10">
+                  <div className="flex items-center mb-4">
+                    <div className="w-10 h-10 sm:w-12 sm:h-12 bg-gradient-to-br from-primary-500 to-blue-600 rounded-full flex items-center justify-center text-white font-bold text-lg sm:text-xl flex-shrink-0 shadow-lg group-hover:scale-110 transition-transform duration-300">
+                      {testimonial.name.charAt(0)}
+                    </div>
+                    <div className="ml-3 sm:ml-4">
+                      <div className="font-bold text-gray-900 text-sm sm:text-base">{testimonial.name}</div>
+                      <div className="text-xs sm:text-sm text-primary-600 font-medium">{testimonial.role}</div>
+                    </div>
                   </div>
-                  <div className="ml-3 sm:ml-4">
-                    <div className="font-bold text-gray-900 text-sm sm:text-base">{testimonial.name}</div>
-                    <div className="text-xs sm:text-sm text-gray-500">{testimonial.role}</div>
+                  <div className="flex mb-3 sm:mb-4">
+                    {[...Array(5)].map((_, i) => (
+                      <svg key={i} className="w-4 h-4 sm:w-5 sm:h-5 text-yellow-400 fill-current" viewBox="0 0 20 20">
+                        <path d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z"/>
+                      </svg>
+                    ))}
                   </div>
+                  <p className="text-sm sm:text-base text-gray-600 italic leading-relaxed">
+                    "{testimonial.text}"
+                  </p>
                 </div>
-                <div className="flex mb-3 sm:mb-4">
-                  {[...Array(5)].map((_, i) => (
-                    <svg key={i} className="w-4 h-4 sm:w-5 sm:h-5 text-yellow-400 fill-current" viewBox="0 0 20 20">
-                      <path d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z"/>
-                    </svg>
-                  ))}
-                </div>
-                <p className="text-sm sm:text-base text-gray-600 italic leading-relaxed">
-                  "{testimonial.text}"
-                </p>
               </div>
             ))}
           </div>

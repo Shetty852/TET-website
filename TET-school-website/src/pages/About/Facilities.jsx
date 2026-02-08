@@ -67,30 +67,30 @@ const Facilities = () => {
   ];
 
   return (
-    <div className="space-y-8 sm:space-y-12">
+    <div className="space-y-6 sm:space-y-8">
       {/* Hero Section */}
-      <div className="bg-gradient-to-br from-primary-600 via-primary-700 to-primary-900 rounded-xl sm:rounded-2xl shadow-2xl p-6 sm:p-10 lg:p-12 text-white">
-        <h2 className="text-4xl md:text-5xl font-bold mb-4 text-center">Our Facilities</h2>
-        <p className="text-primary-100 text-center text-lg max-w-3xl mx-auto">
+      <div className="bg-gradient-to-br from-primary-600 via-primary-700 to-primary-900 rounded-xl sm:rounded-2xl shadow-2xl p-4 sm:p-6 text-white">
+        <h2 className="text-3xl md:text-4xl font-bold mb-3 text-center">Our Facilities</h2>
+        <p className="text-primary-100 text-center text-base sm:text-lg max-w-3xl mx-auto">
           World-class infrastructure designed to provide the best learning environment
         </p>
       </div>
 
       {/* Campus Overview Stats */}
-      <div className="grid grid-cols-2 md:grid-cols-4 gap-4 sm:gap-6">
-        <div className="bg-gradient-to-br from-blue-50 to-blue-100 p-6 rounded-xl text-center border-t-4 border-blue-500 shadow-lg hover:shadow-xl transition-shadow">
+      <div className="grid grid-cols-2 md:grid-cols-4 gap-3 sm:gap-4">
+        <div className="bg-gradient-to-br from-blue-50 to-blue-100 p-4 rounded-xl text-center border-t-4 border-blue-500 shadow-lg hover:shadow-xl transition-shadow">
           <p className="text-4xl font-bold text-blue-600 mb-2">50</p>
           <p className="text-gray-700 font-semibold text-sm">Classrooms</p>
         </div>
-        <div className="bg-gradient-to-br from-purple-50 to-purple-100 p-6 rounded-xl text-center border-t-4 border-purple-500 shadow-lg hover:shadow-xl transition-shadow">
+        <div className="bg-gradient-to-br from-purple-50 to-purple-100 p-4 rounded-xl text-center border-t-4 border-purple-500 shadow-lg hover:shadow-xl transition-shadow">
           <p className="text-4xl font-bold text-purple-600 mb-2">55</p>
           <p className="text-gray-700 font-semibold text-sm">Laboratories</p>
         </div>
-        <div className="bg-gradient-to-br from-green-50 to-green-100 p-6 rounded-xl text-center border-t-4 border-green-500 shadow-lg hover:shadow-xl transition-shadow">
+        <div className="bg-gradient-to-br from-green-50 to-green-100 p-4 rounded-xl text-center border-t-4 border-green-500 shadow-lg hover:shadow-xl transition-shadow">
           <p className="text-4xl font-bold text-green-600 mb-2">100m²</p>
           <p className="text-gray-700 font-semibold text-sm">Library</p>
         </div>
-        <div className="bg-gradient-to-br from-orange-50 to-orange-100 p-6 rounded-xl text-center border-t-4 border-orange-500 shadow-lg hover:shadow-xl transition-shadow">
+        <div className="bg-gradient-to-br from-orange-50 to-orange-100 p-4 rounded-xl text-center border-t-4 border-orange-500 shadow-lg hover:shadow-xl transition-shadow">
           <p className="text-3xl font-bold text-orange-600 mb-2">87,120m²</p>
           <p className="text-gray-700 font-semibold text-sm">Campus Area</p>
         </div>
@@ -101,7 +101,7 @@ const Facilities = () => {
         <h3 className="text-2xl md:text-3xl font-bold text-gray-800 mb-8 text-center">
           Our World-Class Facilities
         </h3>
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-5">
           {facilities.map((facility, index) => (
             <div
               key={index}
@@ -130,169 +130,109 @@ const Facilities = () => {
       </div>
 
       {/* Sanitation Facilities */}
-      <div className="bg-white rounded-xl sm:rounded-2xl shadow-xl p-6 sm:p-8 lg:p-10">
-        <h3 className="text-2xl md:text-3xl font-bold text-gray-800 mb-6 text-center">
-          Hygiene & Sanitation Facilities
+      <div className="bg-white rounded-xl shadow-lg p-4 border border-gray-200">
+        <h3 className="text-lg font-bold text-gray-800 mb-3 flex items-center">
+          <svg className="w-5 h-5 text-primary-600 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
+          </svg>
+          Hygiene & Sanitation
         </h3>
-        <p className="text-gray-600 text-center mb-8 max-w-3xl mx-auto">
-          We maintain clean, hygienic, and accessible sanitation facilities for all students, 
-          including special provisions for children with special needs.
-        </p>
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+        <div className="flex flex-wrap gap-4 items-center text-sm">
           {sanitationFacilities.map((facility, index) => (
-            <div
-              key={index}
-              className="bg-gradient-to-br from-gray-50 to-gray-100 rounded-xl p-8 text-center border-2 border-gray-200 hover:border-primary-400 hover:shadow-lg transition-all duration-300"
-            >
-              <div className="text-5xl mb-4">{facility.icon}</div>
-              <p className="text-4xl font-bold text-primary-600 mb-2">{facility.count}</p>
-              <p className="text-lg font-semibold text-gray-800 mb-2">{facility.label}</p>
-              <p className="text-sm text-gray-600">{facility.description}</p>
+            <div key={index} className="flex items-center bg-gray-50 rounded-lg px-3 py-2 border border-gray-200">
+              <span className="text-2xl mr-2">{facility.icon}</span>
+              <div>
+                <span className="font-bold text-primary-600 mr-1">{facility.count}</span>
+                <span className="text-gray-700">{facility.label}</span>
+              </div>
             </div>
           ))}
         </div>
       </div>
 
       {/* Technology Integration */}
-      <div className="bg-gradient-to-br from-indigo-600 to-purple-700 rounded-xl sm:rounded-2xl shadow-2xl p-6 sm:p-10 lg:p-12 text-white">
-        <div className="max-w-4xl mx-auto">
-          <div className="text-center mb-8">
-            <div className="inline-block p-4 bg-white/20 backdrop-blur-sm rounded-2xl mb-4">
-              <svg className="w-16 h-16" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
-              </svg>
-            </div>
-            <h3 className="text-3xl md:text-4xl font-bold mb-4">Technology-Enabled Learning</h3>
-            <p className="text-indigo-100 text-lg leading-relaxed">
-              Our campus is equipped with modern technology infrastructure to support digital learning 
-              and prepare students for the future.
-            </p>
+      <div className="bg-gradient-to-r from-indigo-600 to-purple-600 rounded-xl shadow-lg p-4 text-white">
+        <h3 className="text-lg font-bold mb-3 flex items-center">
+          <svg className="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+          </svg>
+          Technology-Enabled Learning
+        </h3>
+        <div className="grid grid-cols-2 lg:grid-cols-4 gap-3">
+          <div className="bg-white/10 backdrop-blur-sm rounded-lg p-3 text-center">
+            <svg className="w-6 h-6 mx-auto mb-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+            </svg>
+            <p className="text-sm font-semibold">Smart Classrooms</p>
           </div>
-          
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-            <div className="bg-white/10 backdrop-blur-sm rounded-xl p-6">
-              <div className="flex items-center mb-3">
-                <svg className="w-8 h-8 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
-                </svg>
-                <h4 className="font-bold text-xl">Smart Classrooms</h4>
-              </div>
-              <p className="text-indigo-100">
-                Interactive digital boards and multimedia systems in classrooms
-              </p>
-            </div>
-            
-            <div className="bg-white/10 backdrop-blur-sm rounded-xl p-6">
-              <div className="flex items-center mb-3">
-                <svg className="w-8 h-8 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 18h.01M8 21h8a2 2 0 002-2V5a2 2 0 00-2-2H8a2 2 0 00-2 2v14a2 2 0 002 2z" />
-                </svg>
-                <h4 className="font-bold text-xl">Computer Labs</h4>
-              </div>
-              <p className="text-indigo-100">
-                Well-equipped computer laboratories with latest software
-              </p>
-            </div>
-            
-            <div className="bg-white/10 backdrop-blur-sm rounded-xl p-6">
-              <div className="flex items-center mb-3">
-                <svg className="w-8 h-8 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9c1.657 0 3-4.03 3-9s-1.343-9-3-9m0 18c-1.657 0-3-4.03-3-9s1.343-9 3-9m-9 9a9 9 0 019-9" />
-                </svg>
-                <h4 className="font-bold text-xl">Wi-Fi Campus</h4>
-              </div>
-              <p className="text-indigo-100">
-                High-speed internet connectivity throughout the campus
-              </p>
-            </div>
-            
-            <div className="bg-white/10 backdrop-blur-sm rounded-xl p-6">
-              <div className="flex items-center mb-3">
-                <svg className="w-8 h-8 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 10l4.553-2.276A1 1 0 0121 8.618v6.764a1 1 0 01-1.447.894L15 14M5 18h8a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v8a2 2 0 002 2z" />
-                </svg>
-                <h4 className="font-bold text-xl">Digital Resources</h4>
-              </div>
-              <p className="text-indigo-100">
-                Access to online learning platforms and educational content
-              </p>
-            </div>
+          <div className="bg-white/10 backdrop-blur-sm rounded-lg p-3 text-center">
+            <svg className="w-6 h-6 mx-auto mb-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 18h.01M8 21h8a2 2 0 002-2V5a2 2 0 00-2-2H8a2 2 0 00-2 2v14a2 2 0 002 2z" />
+            </svg>
+            <p className="text-sm font-semibold">Computer Labs</p>
+          </div>
+          <div className="bg-white/10 backdrop-blur-sm rounded-lg p-3 text-center">
+            <svg className="w-6 h-6 mx-auto mb-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9c1.657 0 3-4.03 3-9s-1.343-9-3-9m0 18c-1.657 0-3-4.03-3-9s1.343-9 3-9m-9 9a9 9 0 019-9" />
+            </svg>
+            <p className="text-sm font-semibold">Wi-Fi Campus</p>
+          </div>
+          <div className="bg-white/10 backdrop-blur-sm rounded-lg p-3 text-center">
+            <svg className="w-6 h-6 mx-auto mb-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 10l4.553-2.276A1 1 0 0121 8.618v6.764a1 1 0 01-1.447.894L15 14M5 18h8a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v8a2 2 0 002 2z" />
+            </svg>
+            <p className="text-sm font-semibold">Digital Resources</p>
           </div>
         </div>
       </div>
 
       {/* Safety & Security */}
-      <div className="bg-white rounded-xl sm:rounded-2xl shadow-xl p-6 sm:p-8 lg:p-10">
-        <h3 className="text-2xl md:text-3xl font-bold text-gray-800 mb-6 text-center">
+      <div className="bg-gradient-to-br from-green-50 via-white to-blue-50 rounded-xl sm:rounded-2xl shadow-xl p-4 sm:p-5 border border-green-200">
+        <h3 className="text-xl sm:text-2xl font-bold bg-gradient-to-r from-green-600 to-blue-600 bg-clip-text text-transparent mb-3 text-center">
           Safety & Security
         </h3>
-        <p className="text-gray-600 text-center mb-8 max-w-3xl mx-auto">
-          We prioritize the safety and security of all our students with comprehensive measures 
-          and facilities throughout the campus.
+        <p className="text-gray-600 text-center mb-4 text-xs sm:text-sm">
+          Comprehensive safety measures throughout campus
         </p>
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-          <div className="flex items-start space-x-4 p-6 bg-gray-50 rounded-xl hover:bg-gray-100 transition-colors">
-            <div className="flex-shrink-0">
-              <div className="w-12 h-12 bg-green-100 rounded-xl flex items-center justify-center">
-                <svg className="w-6 h-6 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
-                </svg>
-              </div>
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-3">
+          <div className="bg-white p-3 rounded-xl shadow-md hover:shadow-lg transition-all duration-300 border border-green-200 hover:border-green-400 text-center group">
+            <div className="w-10 h-10 bg-gradient-to-br from-green-500 to-green-600 rounded-full flex items-center justify-center mx-auto mb-2 group-hover:scale-110 transition-transform">
+              <svg className="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
+              </svg>
             </div>
-            <div>
-              <h4 className="font-semibold text-lg text-gray-800 mb-2">Secure Campus</h4>
-              <p className="text-gray-600">
-                Gated campus with controlled entry and exit points
-              </p>
-            </div>
+            <h4 className="font-bold text-xs text-gray-800 mb-1">Secure Campus</h4>
+            <p className="text-xs text-gray-600">Gated & Controlled</p>
           </div>
 
-          <div className="flex items-start space-x-4 p-6 bg-gray-50 rounded-xl hover:bg-gray-100 transition-colors">
-            <div className="flex-shrink-0">
-              <div className="w-12 h-12 bg-blue-100 rounded-xl flex items-center justify-center">
-                <svg className="w-6 h-6 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 17h5l-1.405-1.405A2.032 2.032 0 0118 14.158V11a6.002 6.002 0 00-4-5.659V5a2 2 0 10-4 0v.341C7.67 6.165 6 8.388 6 11v3.159c0 .538-.214 1.055-.595 1.436L4 17h5m6 0v1a3 3 0 11-6 0v-1m6 0H9" />
-                </svg>
-              </div>
+          <div className="bg-white p-3 rounded-xl shadow-md hover:shadow-lg transition-all duration-300 border border-blue-200 hover:border-blue-400 text-center group">
+            <div className="w-10 h-10 bg-gradient-to-br from-blue-500 to-blue-600 rounded-full flex items-center justify-center mx-auto mb-2 group-hover:scale-110 transition-transform">
+              <svg className="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 17h5l-1.405-1.405A2.032 2.032 0 0118 14.158V11a6.002 6.002 0 00-4-5.659V5a2 2 0 10-4 0v.341C7.67 6.165 6 8.388 6 11v3.159c0 .538-.214 1.055-.595 1.436L4 17h5m6 0v1a3 3 0 11-6 0v-1m6 0H9" />
+              </svg>
             </div>
-            <div>
-              <h4 className="font-semibold text-lg text-gray-800 mb-2">Emergency Systems</h4>
-              <p className="text-gray-600">
-                Fire safety equipment and emergency response protocols
-              </p>
-            </div>
+            <h4 className="font-bold text-xs text-gray-800 mb-1">Emergency</h4>
+            <p className="text-xs text-gray-600">Fire & Response</p>
           </div>
 
-          <div className="flex items-start space-x-4 p-6 bg-gray-50 rounded-xl hover:bg-gray-100 transition-colors">
-            <div className="flex-shrink-0">
-              <div className="w-12 h-12 bg-purple-100 rounded-xl flex items-center justify-center">
-                <svg className="w-6 h-6 text-purple-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197M13 7a4 4 0 11-8 0 4 4 0 018 0z" />
-                </svg>
-              </div>
+          <div className="bg-white p-3 rounded-xl shadow-md hover:shadow-lg transition-all duration-300 border border-purple-200 hover:border-purple-400 text-center group">
+            <div className="w-10 h-10 bg-gradient-to-br from-purple-500 to-purple-600 rounded-full flex items-center justify-center mx-auto mb-2 group-hover:scale-110 transition-transform">
+              <svg className="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197M13 7a4 4 0 11-8 0 4 4 0 018 0z" />
+              </svg>
             </div>
-            <div>
-              <h4 className="font-semibold text-lg text-gray-800 mb-2">Trained Staff</h4>
-              <p className="text-gray-600">
-                Security personnel and staff trained in safety procedures
-              </p>
-            </div>
+            <h4 className="font-bold text-xs text-gray-800 mb-1">Trained Staff</h4>
+            <p className="text-xs text-gray-600">Safety Experts</p>
           </div>
 
-          <div className="flex items-start space-x-4 p-6 bg-gray-50 rounded-xl hover:bg-gray-100 transition-colors">
-            <div className="flex-shrink-0">
-              <div className="w-12 h-12 bg-red-100 rounded-xl flex items-center justify-center">
-                <svg className="w-6 h-6 text-red-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
-                </svg>
-              </div>
+          <div className="bg-white p-3 rounded-xl shadow-md hover:shadow-lg transition-all duration-300 border border-red-200 hover:border-red-400 text-center group">
+            <div className="w-10 h-10 bg-gradient-to-br from-red-500 to-red-600 rounded-full flex items-center justify-center mx-auto mb-2 group-hover:scale-110 transition-transform">
+              <svg className="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
+              </svg>
             </div>
-            <div>
-              <h4 className="font-semibold text-lg text-gray-800 mb-2">First Aid</h4>
-              <p className="text-gray-600">
-                Medical room with first aid facilities and trained personnel
-              </p>
-            </div>
+            <h4 className="font-bold text-xs text-gray-800 mb-1">First Aid</h4>
+            <p className="text-xs text-gray-600">Medical Room</p>
           </div>
         </div>
       </div>

@@ -6,15 +6,15 @@ const Footer = () => {
 
   return (
     <footer className="bg-gray-800 text-white mt-auto">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-12 lg:py-16">
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 lg:gap-12">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6 sm:py-8">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
           {/* About Section */}
           <div>
-            <div className="flex items-center space-x-3 mb-3 sm:mb-4">
+            <div className="flex items-center space-x-3 mb-2 sm:mb-3">
               <img 
                 src={schoolLogo} 
                 alt="Talent Public School Logo" 
-                className="w-10 h-10 sm:w-12 sm:h-12 object-contain"
+                className="w-10 h-10 object-contain"
               />
               <h3 className="text-lg sm:text-xl font-bold">Talent Public School</h3>
             </div>
@@ -25,7 +25,7 @@ const Footer = () => {
 
           {/* Quick Links */}
           <div>
-            <h3 className="text-lg sm:text-xl font-bold mb-3 sm:mb-4">Quick Links</h3>
+            <h3 className="text-lg sm:text-xl font-bold mb-2 sm:mb-3">Quick Links</h3>
             <ul className="space-y-2">
               <li>
                 <Link to="/" className="text-gray-300 hover:text-primary-400 text-sm sm:text-base transition-colors duration-200 inline-block">
@@ -57,7 +57,7 @@ const Footer = () => {
 
           {/* Contact Info */}
           <div className="sm:col-span-2 lg:col-span-1">
-            <h3 className="text-lg sm:text-xl font-bold mb-3 sm:mb-4">Contact Info</h3>
+            <h3 className="text-lg sm:text-xl font-bold mb-2 sm:mb-3">Contact Info</h3>
             <ul className="space-y-3 text-sm sm:text-base text-gray-300">
               <li className="flex items-start">
                 <svg className="w-5 h-5 sm:w-6 sm:h-6 mr-2 sm:mr-3 mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -88,7 +88,7 @@ const Footer = () => {
           </div>
         </div>
 
-        <div className="border-t border-gray-700 mt-8 pt-6 sm:pt-8 text-center">
+        <div className="border-t border-gray-700 mt-6 pt-5 sm:pt-6 text-center">
           <p className="text-gray-400 text-xs sm:text-sm">
             &copy; {currentYear} Talent Public School - Talent Educational Trust. All rights reserved.
           </p>

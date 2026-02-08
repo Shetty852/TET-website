@@ -20,14 +20,14 @@ const Contact = () => {
   }, [section]);
 
   return (
-    <div className="min-h-screen bg-gray-50 py-8 sm:py-12 lg:py-16">
+    <div className="min-h-screen bg-gray-50 py-6 sm:py-8">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Page Header */}
-        <div className="text-center mb-8 sm:mb-12 lg:mb-16 bg-white/95 border border-gray-100 shadow-sm rounded-2xl sm:rounded-3xl px-5 sm:px-8 lg:px-10 py-8 sm:py-10 animate-fadeIn transition-all duration-300 hover:shadow-lg hover:scale-[1.01]">
-          <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-gray-800 mb-3 sm:mb-4">
+        <div className="text-center mb-6 sm:mb-8 bg-white/95 border border-gray-100 shadow-sm rounded-2xl sm:rounded-3xl px-4 sm:px-6 py-5 sm:py-6 animate-fadeIn transition-all duration-300 hover:shadow-lg hover:scale-[1.01]">
+          <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold text-gray-800 mb-2 sm:mb-3">
             Contact Us
           </h1>
-          <p className="text-base sm:text-lg md:text-xl text-gray-600 max-w-3xl mx-auto px-2 sm:px-4">
+          <p className="text-base sm:text-lg text-gray-600 max-w-3xl mx-auto px-2 sm:px-4">
             We're here to answer your questions and provide the information you need
           </p>
         </div>

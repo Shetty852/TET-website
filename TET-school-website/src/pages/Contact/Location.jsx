@@ -1,7 +1,7 @@
 const Location = () => {
   return (
-    <div className="bg-white rounded-xl sm:rounded-2xl shadow-lg border border-gray-100 p-6 sm:p-8 animate-fadeIn transition-all duration-300 hover:shadow-2xl hover:-translate-y-1">
-      <div className="flex items-center mb-6 sm:mb-8 pb-5 border-b border-gray-100">
+    <div className="bg-white rounded-xl sm:rounded-2xl shadow-lg border border-gray-100 p-4 sm:p-6 animate-fadeIn transition-all duration-300 hover:shadow-2xl hover:-translate-y-1">
+      <div className="flex items-center mb-4 sm:mb-5 pb-3 border-b border-gray-100">
         <div className="w-16 h-16 bg-primary-100 ring-4 ring-primary-50 rounded-full flex items-center justify-center mr-4 shrink-0">
           <svg className="w-8 h-8 text-primary-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
@@ -14,7 +14,7 @@ const Location = () => {
         </div>
       </div>
 
-      <div className="space-y-6 sm:space-y-8">
+      <div className="space-y-4 sm:space-y-5">
         {/* Address */}
         <div className="border border-primary-100 border-l-4 border-l-primary-600 rounded-lg pl-4 sm:pl-6 pr-4 sm:pr-6 py-3 sm:py-4 shadow-sm transition-all duration-300 hover:scale-[1.02] hover:shadow-md">
           <h3 className="font-semibold text-lg text-gray-800 mb-2">Campus Address</h3>

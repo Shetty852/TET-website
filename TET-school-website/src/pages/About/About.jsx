@@ -14,10 +14,7 @@ import selfCert from './Assets/certificates/SELF CERTIFICATE.png';
 const About = () => {
   const [searchParams] = useSearchParams();
   const section = searchParams.get('section');
-  const [currentSlide, setCurrentSlide] = useState(0);
-  const [isTransitioning, setIsTransitioning] = useState(false);
-  const carouselRef = useRef(null);
-
+  const certificatesPerView = 1;
   const certificates = [
     { id: 1, image: affiliationCert, title: 'CBSE Affiliation Certificate 2025-26' },
     { id: 2, image: buildingSafetyCert, title: 'Building Safety Certificate' },
@@ -26,21 +23,17 @@ const About = () => {
     { id: 5, image: landCert, title: 'Land Certificate' },
     { id: 6, image: selfCert, title: 'Self Declaration Certificate' }
   ];
-
-  const certificatesPerView = 1;
-
   const extendedCertificates = [
     ...certificates.slice(-certificatesPerView),
     ...certificates,
     ...certificates,
     ...certificates.slice(0, certificatesPerView),
   ];
-
   const initialIndex = certificatesPerView;
-
-  useEffect(() => {
-    setCurrentSlide(initialIndex);
-  }, [initialIndex]);
+  
+  const [currentSlide, setCurrentSlide] = useState(initialIndex);
+  const [isTransitioning, setIsTransitioning] = useState(false);
+  const carouselRef = useRef(null);
 
   useEffect(() => {
     // Scroll to top immediately on mount
@@ -59,18 +52,18 @@ const About = () => {
 
   const getCardWidth = () => {
     if (typeof window !== 'undefined') {
-      if (window.innerWidth < 640) return window.innerWidth - 80; // Mobile
-      if (window.innerWidth < 1024) return 600; // Tablet
-      return 800; // Desktop
+      if (window.innerWidth < 640) return window.innerWidth - 60; // Mobile
+      if (window.innerWidth < 1024) return 520; // Tablet
+      return 680; // Desktop
     }
-    return 800;
+    return 680;
   };
 
   const getGap = () => {
     if (typeof window !== 'undefined') {
-      return window.innerWidth < 640 ? 16 : 32;
+      return window.innerWidth < 640 ? 12 : 24;
     }
-    return 32;
+    return 24;
   };
 
   const handleNext = useCallback(() => {
@@ -97,6 +90,15 @@ const About = () => {
       setIsTransitioning(false);
     }, 500);
   }, [isTransitioning, initialIndex, certificates.length]);
+
+  // Auto-slide every 5 seconds
+  useEffect(() => {
+    const autoSlideInterval = setInterval(() => {
+      handleNext();
+    }, 5000);
+
+    return () => clearInterval(autoSlideInterval);
+  }, [handleNext]);
 
   const handlePrev = useCallback(() => {
     if (isTransitioning) return;
@@ -148,30 +150,38 @@ const About = () => {
   );
 
   return (
-    <div className="min-h-screen bg-gray-50 py-8 sm:py-12 lg:py-16">
+    <div className="min-h-screen bg-gradient-to-br from-gray-50 via-blue-50/30 to-purple-50/20 py-6 sm:py-8">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Page Header */}
-        <div className="text-center mb-8 sm:mb-12 lg:mb-16">
-          <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-gray-800 mb-3 sm:mb-4">
+        <div className="text-center mb-6 sm:mb-8 animate-fadeIn">
+          <div className="inline-block mb-3 px-4 py-2 bg-gradient-to-r from-primary-500 to-blue-600 text-white rounded-full text-xs sm:text-sm font-semibold shadow-lg transform hover:scale-105 transition-transform duration-300">
+            🏫 Excellence in Education Since Inception
+          </div>
+          <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold bg-gradient-to-r from-gray-800 via-primary-700 to-blue-700 bg-clip-text text-transparent mb-3 sm:mb-4 transform hover:scale-105 transition-transform duration-300">
             About Us
           </h1>
-          <p className="text-base sm:text-lg md:text-xl text-gray-600 max-w-3xl mx-auto px-4">
+          <p className="text-base sm:text-lg text-gray-600 max-w-3xl mx-auto px-4 leading-relaxed">
             Discover our story, values, and commitment to educational excellence
           </p>
+          <div className="mt-4 flex justify-center gap-2">
+            <div className="w-16 h-1 bg-gradient-to-r from-primary-500 to-blue-600 rounded-full"></div>
+            <div className="w-16 h-1 bg-gradient-to-r from-blue-600 to-purple-600 rounded-full"></div>
+            <div className="w-16 h-1 bg-gradient-to-r from-purple-600 to-pink-600 rounded-full"></div>
+          </div>
         </div>
 
         {/* Our School Section */}
-        <div id="our-school" className="scroll-mt-20">
+        <div id="our-school" className="scroll-mt-20 transform transition-all duration-500 hover:scale-[1.01]">
           <OurSchool />
         </div>
 
         {/* Management Team Section */}
-        <div id="management-team" className="scroll-mt-20">
+        <div id="management-team" className="scroll-mt-20 transform transition-all duration-500 hover:scale-[1.01]">
           <ManagementTeam />
         </div>
 
         {/* Vision & Mission Section */}
-        <div id="vision-mission" className="scroll-mt-20">
+        <div id="vision-mission" className="scroll-mt-20 transform transition-all duration-500 hover:scale-[1.01]">
           <VisionMission />
         </div>
 
@@ -181,14 +191,17 @@ const About = () => {
         </div>
 
         {/* Certificates Carousel Section */}
-        <div className="mt-12 sm:mt-16 lg:mt-20">
-          <div className="bg-white rounded-xl sm:rounded-2xl shadow-xl overflow-hidden p-6 sm:p-8 lg:p-12">
+        <div className="mt-6 sm:mt-8">
+          <div className="bg-gradient-to-br from-blue-50 via-white to-purple-50 rounded-2xl sm:rounded-3xl shadow-2xl overflow-hidden p-5 sm:p-6 border border-blue-200/50">
             {/* Section Header */}
-            <div className="text-center mb-8 sm:mb-12">
-              <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-gray-800 mb-3">
-                Our Certifications & Accreditations
-              </h2>
-              <p className="text-gray-600 text-sm sm:text-base md:text-lg max-w-3xl mx-auto">
+            <div className="text-center mb-5 sm:mb-6">
+              <div className="inline-block">
+                <h2 className="text-2xl sm:text-3xl font-bold bg-gradient-to-r from-primary-600 via-blue-600 to-purple-600 bg-clip-text text-transparent mb-2">
+                  Our Certifications & Accreditations
+                </h2>
+                <div className="h-1 bg-gradient-to-r from-primary-500 via-blue-500 to-purple-500 rounded-full mx-auto w-3/4"></div>
+              </div>
+              <p className="text-gray-600 text-sm sm:text-base max-w-2xl mx-auto mt-3">
                 Recognized and certified for maintaining the highest standards in education and safety
               </p>
             </div>
@@ -206,11 +219,11 @@ const About = () => {
                 <button
                   onClick={handlePrev}
                   disabled={isTransitioning}
-                  className="p-2 sm:p-3 rounded-full bg-gray-100 hover:bg-gray-200 shadow-lg hover:shadow-xl transition-all duration-300 group disabled:opacity-50 focus:outline-none focus:ring-2 focus:ring-primary-500 flex-shrink-0 z-10"
+                  className="p-2 sm:p-3 rounded-full bg-gradient-to-br from-primary-500 to-blue-600 hover:from-primary-600 hover:to-blue-700 shadow-lg hover:shadow-xl transition-all duration-300 group disabled:opacity-50 focus:outline-none focus:ring-2 focus:ring-primary-400 flex-shrink-0 z-10 transform hover:scale-110"
                   aria-label="Previous certificate"
                 >
-                  <svg className="w-5 h-5 sm:w-6 sm:h-6 text-gray-700 group-hover:text-gray-900" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
+                  <svg className="w-5 h-5 sm:w-6 sm:h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M15 19l-7-7 7-7" />
                   </svg>
                 </button>
 
@@ -234,17 +247,20 @@ const About = () => {
                         className="flex-shrink-0"
                         style={{ width: `${getCardWidth()}px` }}
                       >
-                        <div className="bg-gray-50 rounded-lg overflow-hidden shadow-md hover:shadow-xl transition-all duration-300">
-                          <div className="aspect-[4/3] bg-white p-4">
+                        <div className="bg-white rounded-2xl overflow-hidden shadow-xl hover:shadow-2xl transition-all duration-500 border-2 border-transparent hover:border-primary-300 transform hover:-translate-y-2 group">
+                          <div className="aspect-[4/3] bg-gradient-to-br from-blue-50 via-white to-purple-50 p-4 sm:p-5 relative">
+                            <div className="absolute top-3 right-3 bg-gradient-to-br from-primary-500 to-blue-600 text-white px-3 py-1 rounded-full text-xs font-semibold shadow-lg">
+                              Verified ✓
+                            </div>
                             <img
                               src={certificate.image}
                               alt={certificate.title}
-                              className="w-full h-full object-contain"
+                              className="w-full h-full object-contain transition-transform duration-500 group-hover:scale-105"
                               loading="lazy"
                             />
                           </div>
-                          <div className="p-4 bg-white">
-                            <h3 className="text-center text-sm sm:text-base md:text-lg font-semibold text-gray-800">
+                          <div className="p-3 sm:p-4 bg-gradient-to-r from-primary-50 via-blue-50 to-purple-50 border-t-2 border-primary-200">
+                            <h3 className="text-center text-sm sm:text-base font-bold bg-gradient-to-r from-gray-800 to-gray-700 bg-clip-text text-transparent">
                               {certificate.title}
                             </h3>
                           </div>
@@ -258,18 +274,18 @@ const About = () => {
                 <button
                   onClick={handleNext}
                   disabled={isTransitioning}
-                  className="p-2 sm:p-3 rounded-full bg-gray-100 hover:bg-gray-200 shadow-lg hover:shadow-xl transition-all duration-300 group disabled:opacity-50 focus:outline-none focus:ring-2 focus:ring-primary-500 flex-shrink-0 z-10"
+                  className="p-2 sm:p-3 rounded-full bg-gradient-to-br from-primary-500 to-blue-600 hover:from-primary-600 hover:to-blue-700 shadow-lg hover:shadow-xl transition-all duration-300 group disabled:opacity-50 focus:outline-none focus:ring-2 focus:ring-primary-400 flex-shrink-0 z-10 transform hover:scale-110"
                   aria-label="Next certificate"
                 >
-                  <svg className="w-5 h-5 sm:w-6 sm:h-6 text-gray-700 group-hover:text-gray-900" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                  <svg className="w-5 h-5 sm:w-6 sm:h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M9 5l7 7-7 7" />
                   </svg>
                 </button>
               </div>
 
               {/* Dots Navigation */}
               <div
-                className="flex justify-center mt-6 sm:mt-8 gap-2"
+                className="flex justify-center mt-5 sm:mt-6 gap-2"
                 role="tablist"
                 aria-label="Carousel navigation"
               >
@@ -277,10 +293,10 @@ const About = () => {
                   <button
                     key={index}
                     onClick={() => goToSlide(index)}
-                    className={`transition-all duration-300 rounded-full focus:outline-none focus:ring-2 focus:ring-primary-500 ${
+                    className={`transition-all duration-300 rounded-full focus:outline-none focus:ring-2 focus:ring-primary-400 ${
                       index === getDotIndex()
-                        ? 'w-8 sm:w-10 h-2 sm:h-3 bg-primary-600 scale-110'
-                        : 'w-2 sm:w-3 h-2 sm:h-3 bg-gray-300 hover:bg-gray-400'
+                        ? 'w-8 sm:w-10 h-2.5 sm:h-3 bg-gradient-to-r from-primary-500 to-blue-600 shadow-md scale-110'
+                        : 'w-2.5 sm:w-3 h-2.5 sm:h-3 bg-gray-300 hover:bg-gradient-to-r hover:from-primary-300 hover:to-blue-400'
                     }`}
                     role="tab"
                     aria-selected={index === getDotIndex()}
@@ -290,8 +306,10 @@ const About = () => {
               </div>
 
               {/* Counter */}
-              <div className="text-center mt-4 text-sm text-gray-600">
-                {getDotIndex() + 1} / {certificates.length}
+              <div className="text-center mt-3 sm:mt-4">
+                <span className="inline-block bg-gradient-to-r from-primary-500 to-blue-600 text-white px-4 py-1.5 rounded-full text-xs sm:text-sm font-semibold shadow-md">
+                  {getDotIndex() + 1} / {certificates.length}
+                </span>
               </div>
             </div>
           </div>

@@ -126,36 +126,36 @@ const ManagementTeam = () => {
   };
 
   return (
-    <div className="bg-white rounded-xl sm:rounded-2xl shadow-xl overflow-hidden mb-8 sm:mb-12">
+    <div className="bg-white rounded-xl sm:rounded-2xl shadow-xl overflow-hidden mb-6 sm:mb-8">
       {/* Header Section */}
-      <div className="bg-gradient-to-br from-primary-600 via-primary-700 to-primary-900 p-6 sm:p-8 lg:p-12 text-white">
+      <div className="bg-gradient-to-br from-primary-600 via-primary-700 to-primary-900 p-4 sm:p-6 text-white">
         <div className="text-center">
-          <div className="inline-block mb-4 sm:mb-6">
-            <div className="w-16 h-16 sm:w-20 sm:h-20 bg-white/20 backdrop-blur-sm rounded-2xl flex items-center justify-center mx-auto">
-              <svg className="w-8 h-8 sm:w-10 sm:h-10 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <div className="inline-block mb-3 sm:mb-4">
+            <div className="w-14 h-14 sm:w-16 sm:h-16 bg-white/20 backdrop-blur-sm rounded-2xl flex items-center justify-center mx-auto">
+              <svg className="w-7 h-7 sm:w-8 sm:h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" />
               </svg>
             </div>
           </div>
-          <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold mb-3 sm:mb-4">
+          <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-2 sm:mb-3">
             Management Team
           </h2>
-          <p className="text-base sm:text-lg lg:text-xl text-primary-100 max-w-3xl mx-auto px-4">
+          <p className="text-base sm:text-lg text-primary-100 max-w-3xl mx-auto px-4">
             Meet the dedicated leaders who guide our institution towards excellence
           </p>
         </div>
       </div>
 
       {/* Management Cards */}
-      <div className="p-4 sm:p-6 lg:p-12 bg-gradient-to-br from-gray-50 to-gray-100">
+      <div className="p-3 sm:p-5 bg-gradient-to-br from-gray-50 to-gray-100">
         {categories.map((category, categoryIndex) => (
-          <div key={categoryIndex} className="mb-8 sm:mb-12 last:mb-0">
-            <h3 className="text-xl sm:text-2xl font-bold text-gray-800 mb-4 sm:mb-6 flex items-center">
+          <div key={categoryIndex} className="mb-5 sm:mb-6 last:mb-0">
+            <h3 className="text-xl sm:text-2xl font-bold text-gray-800 mb-3 sm:mb-4 flex items-center">
               <span className={`inline-block w-1.5 sm:w-2 h-6 sm:h-8 bg-gradient-to-b ${getCategoryColor(category)} rounded-full mr-3`}></span>
               {category}
             </h3>
             
-            <div className="grid grid-cols-1 gap-4 sm:gap-6">
+            <div className="grid grid-cols-1 gap-3 sm:gap-4">
               {managementTeam
                 .filter(member => member.category === category)
                 .map((member) => (
@@ -165,10 +165,10 @@ const ManagementTeam = () => {
                   >
                     {/* Card Header - Always Visible */}
                     <div
-                      className="p-4 sm:p-6 cursor-pointer bg-gradient-to-br from-white to-gray-50 hover:from-gray-50 hover:to-gray-100 transition-colors"
+                      className="p-3 sm:p-4 cursor-pointer bg-gradient-to-br from-white to-gray-50 hover:from-gray-50 hover:to-gray-100 transition-colors"
                       onClick={() => toggleExpand(member.id)}
                     >
-                      <div className="flex items-start gap-3 sm:gap-4">
+                      <div className="flex items-start gap-2.5 sm:gap-3">
                         {/* Photo Avatar */}
                         <div className={`flex-shrink-0 w-16 h-16 sm:w-20 sm:h-20 lg:w-24 lg:h-24 ${member.image ? '' : `bg-gradient-to-br ${getCategoryColor(member.category)}`} rounded-xl sm:rounded-2xl flex items-center justify-center text-white font-bold text-xl sm:text-2xl lg:text-3xl shadow-lg overflow-hidden`}>
                           {member.image ? (
@@ -220,9 +220,9 @@ const ManagementTeam = () => {
 
                     {/* Expanded Content */}
                     {expandedId === member.id && (
-                      <div className="border-t border-gray-200 bg-gray-50 p-4 sm:p-6 animate-fadeIn">
+                      <div className="border-t border-gray-200 bg-gray-50 p-3 sm:p-4 animate-fadeIn">
                         {/* Bio */}
-                        <div className="mb-4 sm:mb-6">
+                        <div className="mb-3 sm:mb-4">
                           <h5 className="text-sm font-semibold text-gray-700 mb-2 flex items-center">
                             <svg className="w-4 h-4 mr-2 text-primary-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" />
@@ -235,7 +235,7 @@ const ManagementTeam = () => {
                         </div>
 
                         {/* Qualifications */}
-                        <div className="mb-4 sm:mb-6">
+                        <div className="mb-3 sm:mb-4">
                           <h5 className="text-sm font-semibold text-gray-700 mb-2 flex items-center">
                             <svg className="w-4 h-4 mr-2 text-primary-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 14l9-5-9-5-9 5 9 5z" />
@@ -249,7 +249,7 @@ const ManagementTeam = () => {
                         </div>
 
                         {/* Expertise */}
-                        <div className="mb-4 sm:mb-6">
+                        <div className="mb-3 sm:mb-4">
                           <h5 className="text-sm font-semibold text-gray-700 mb-2 flex items-center">
                             <svg className="w-4 h-4 mr-2 text-primary-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
@@ -307,7 +307,7 @@ const ManagementTeam = () => {
       </div>
 
       {/* Footer Note */}
-      <div className="bg-gradient-to-r from-primary-50 to-primary-100 p-4 sm:p-6 text-center border-t border-primary-200">
+      <div className="bg-gradient-to-r from-primary-50 to-primary-100 p-3 sm:p-4 text-center border-t border-primary-200">
         <p className="text-xs sm:text-sm text-primary-800">
           <span className="font-semibold">Click on any team member</span> to view their complete profile, qualifications, and contact details
         </p>

@@ -13,21 +13,21 @@ const Navbar = () => {
   };
 
   return (
-    <nav className="bg-white shadow-lg sticky top-0 z-50">
+    <nav className="bg-white shadow-lg fixed top-0 left-0 right-0 z-50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex justify-between items-center h-14 sm:h-16 lg:h-20">
+        <div className="flex justify-between items-center h-14 sm:h-16">
           {/* Logo */}
           <Link 
             to="/" 
-            className="flex items-center space-x-2 sm:space-x-3"
+            className="flex items-center space-x-2 sm:space-x-3 group"
             onClick={closeAllDropdowns}
           >
             <img 
               src={schoolLogo} 
               alt="Talent Public School Logo" 
-              className="w-8 h-8 sm:w-10 sm:h-10 lg:w-12 lg:h-12 object-contain flex-shrink-0"
+              className="w-8 h-8 sm:w-10 sm:h-10 lg:w-12 lg:h-12 object-contain flex-shrink-0 transform group-hover:scale-110 transition-transform duration-300"
             />
-            <span className="text-sm sm:text-lg lg:text-xl font-bold text-gray-800 truncate max-w-[180px] sm:max-w-none">
+            <span className="text-sm sm:text-lg lg:text-xl font-bold text-gray-800 truncate max-w-[180px] sm:max-w-none group-hover:text-primary-600 transition-colors">
               Talent Public School
             </span>
           </Link>
@@ -37,7 +37,7 @@ const Navbar = () => {
             {/* Home */}
             <Link
               to="/"
-              className="text-gray-700 hover:text-primary-600 px-3 py-2 rounded-md text-sm font-medium transition-colors duration-200"
+              className="text-gray-700 hover:text-primary-600 px-3 py-2 rounded-md text-sm font-medium transition-all duration-200 hover:bg-primary-50"
               onClick={closeAllDropdowns}
             >
               Home
@@ -50,7 +50,7 @@ const Navbar = () => {
               onMouseLeave={() => setIsAboutOpen(false)}
             >
               <button
-                className="text-gray-700 hover:text-primary-600 px-3 py-2 rounded-md text-sm font-medium transition-colors duration-200 flex items-center"
+                className="text-gray-700 hover:text-primary-600 px-3 py-2 rounded-md text-sm font-medium transition-all duration-200 flex items-center hover:bg-primary-50"
                 onClick={() => setIsAboutOpen(!isAboutOpen)}
               >
                 About Us
@@ -68,31 +68,31 @@ const Navbar = () => {
 
               {isAboutOpen && (
                 <div className="absolute left-0 top-full pt-2 w-48">
-                  <div className="bg-white rounded-md shadow-lg py-1 ring-1 ring-black ring-opacity-5">
+                  <div className="bg-white rounded-md shadow-xl py-1 ring-1 ring-black ring-opacity-5">
                     <Link
                       to="/about?section=our-school"
-                      className="block px-4 py-2 text-sm text-gray-700 hover:bg-primary-50 hover:text-primary-600 transition-colors duration-200"
+                      className="block px-4 py-2 text-sm text-gray-700 hover:bg-primary-50 hover:text-primary-600 transition-all duration-200"
                       onClick={closeAllDropdowns}
                     >
                       Our School
                     </Link>
                     <Link
                       to="/about?section=management-team"
-                      className="block px-4 py-2 text-sm text-gray-700 hover:bg-primary-50 hover:text-primary-600 transition-colors duration-200"
+                      className="block px-4 py-2 text-sm text-gray-700 hover:bg-primary-50 hover:text-primary-600 transition-all duration-200"
                       onClick={closeAllDropdowns}
                     >
                       Management Team
                     </Link>
                     <Link
                       to="/about?section=vision-mission"
-                      className="block px-4 py-2 text-sm text-gray-700 hover:bg-primary-50 hover:text-primary-600 transition-colors duration-200"
+                      className="block px-4 py-2 text-sm text-gray-700 hover:bg-primary-50 hover:text-primary-600 transition-all duration-200"
                       onClick={closeAllDropdowns}
                     >
                       Vision & Mission
                     </Link>
                     <Link
                       to="/about?section=facilities"
-                      className="block px-4 py-2 text-sm text-gray-700 hover:bg-primary-50 hover:text-primary-600 transition-colors duration-200"
+                      className="block px-4 py-2 text-sm text-gray-700 hover:bg-primary-50 hover:text-primary-600 transition-all duration-200"
                       onClick={closeAllDropdowns}
                     >
                       Facilities
@@ -109,7 +109,7 @@ const Navbar = () => {
               onMouseLeave={() => setIsContactOpen(false)}
             >
               <button
-                className="text-gray-700 hover:text-primary-600 px-3 py-2 rounded-md text-sm font-medium transition-colors duration-200 flex items-center"
+                className="text-gray-700 hover:text-primary-600 px-3 py-2 rounded-md text-sm font-medium transition-all duration-200 flex items-center hover:bg-primary-50"
                 onClick={() => setIsContactOpen(!isContactOpen)}
               >
                 Contact Us
@@ -127,24 +127,24 @@ const Navbar = () => {
 
               {isContactOpen && (
                 <div className="absolute left-0 top-full pt-2 w-48">
-                  <div className="bg-white rounded-md shadow-lg py-1 ring-1 ring-black ring-opacity-5">
+                  <div className="bg-white rounded-md shadow-xl py-1 ring-1 ring-black ring-opacity-5">
                     <Link
                       to="/contact?section=phone"
-                      className="block px-4 py-2 text-sm text-gray-700 hover:bg-primary-50 hover:text-primary-600 transition-colors duration-200"
+                      className="block px-4 py-2 text-sm text-gray-700 hover:bg-primary-50 hover:text-primary-600 transition-all duration-200"
                       onClick={closeAllDropdowns}
                     >
                       Phone
                     </Link>
                     <Link
                       to="/contact?section=email"
-                      className="block px-4 py-2 text-sm text-gray-700 hover:bg-primary-50 hover:text-primary-600 transition-colors duration-200"
+                      className="block px-4 py-2 text-sm text-gray-700 hover:bg-primary-50 hover:text-primary-600 transition-all duration-200"
                       onClick={closeAllDropdowns}
                     >
                       Email
                     </Link>
                     <Link
                       to="/contact?section=location"
-                      className="block px-4 py-2 text-sm text-gray-700 hover:bg-primary-50 hover:text-primary-600 transition-colors duration-200"
+                      className="block px-4 py-2 text-sm text-gray-700 hover:bg-primary-50 hover:text-primary-600 transition-all duration-200"
                       onClick={closeAllDropdowns}
                     >
                       Location
@@ -159,7 +159,7 @@ const Navbar = () => {
           <div className="md:hidden">
             <button
               onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-              className="text-gray-700 hover:text-primary-600 focus:outline-none focus:text-primary-600"
+              className="text-gray-700 hover:text-primary-600 focus:outline-none focus:text-primary-600 transition-colors"
             >
               <svg
                 className="h-6 w-6"
@@ -184,7 +184,7 @@ const Navbar = () => {
           <div className="px-2 pt-2 pb-3 space-y-1">
             <Link
               to="/"
-              className="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-primary-600 hover:bg-primary-50"
+              className="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-primary-600 hover:bg-primary-50 transition-all"
               onClick={() => {
                 setIsMobileMenuOpen(false);
                 closeAllDropdowns();
@@ -197,7 +197,7 @@ const Navbar = () => {
             <div>
               <button
                 onClick={() => setIsAboutOpen(!isAboutOpen)}
-                className="w-full text-left px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-primary-600 hover:bg-primary-50 flex justify-between items-center"
+                className="w-full text-left px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-primary-600 hover:bg-primary-50 flex justify-between items-center transition-all"
               >
                 About Us
                 <svg
@@ -215,7 +215,7 @@ const Navbar = () => {
                 <div className="pl-4">
                   <Link
                     to="/about?section=our-school"
-                    className="block px-3 py-2 rounded-md text-sm text-gray-600 hover:text-primary-600 hover:bg-primary-50"
+                    className="block px-3 py-2 rounded-md text-sm text-gray-600 hover:text-primary-600 hover:bg-primary-50 transition-all"
                     onClick={() => {
                       setIsMobileMenuOpen(false);
                       closeAllDropdowns();
@@ -225,7 +225,7 @@ const Navbar = () => {
                   </Link>
                   <Link
                     to="/about?section=management-team"
-                    className="block px-3 py-2 rounded-md text-sm text-gray-600 hover:text-primary-600 hover:bg-primary-50"
+                    className="block px-3 py-2 rounded-md text-sm text-gray-600 hover:text-primary-600 hover:bg-primary-50 transition-all"
                     onClick={() => {
                       setIsMobileMenuOpen(false);
                       closeAllDropdowns();
@@ -235,7 +235,7 @@ const Navbar = () => {
                   </Link>
                   <Link
                     to="/about?section=vision-mission"
-                    className="block px-3 py-2 rounded-md text-sm text-gray-600 hover:text-primary-600 hover:bg-primary-50"
+                    className="block px-3 py-2 rounded-md text-sm text-gray-600 hover:text-primary-600 hover:bg-primary-50 transition-all"
                     onClick={() => {
                       setIsMobileMenuOpen(false);
                       closeAllDropdowns();
@@ -245,7 +245,7 @@ const Navbar = () => {
                   </Link>
                   <Link
                     to="/about?section=facilities"
-                    className="block px-3 py-2 rounded-md text-sm text-gray-600 hover:text-primary-600 hover:bg-primary-50"
+                    className="block px-3 py-2 rounded-md text-sm text-gray-600 hover:text-primary-600 hover:bg-primary-50 transition-all"
                     onClick={() => {
                       setIsMobileMenuOpen(false);
                       closeAllDropdowns();
@@ -261,7 +261,7 @@ const Navbar = () => {
             <div>
               <button
                 onClick={() => setIsContactOpen(!isContactOpen)}
-                className="w-full text-left px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-primary-600 hover:bg-primary-50 flex justify-between items-center"
+                className="w-full text-left px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-primary-600 hover:bg-primary-50 flex justify-between items-center transition-all"
               >
                 Contact Us
                 <svg
@@ -279,7 +279,7 @@ const Navbar = () => {
                 <div className="pl-4">
                   <Link
                     to="/contact?section=phone"
-                    className="block px-3 py-2 rounded-md text-sm text-gray-600 hover:text-primary-600 hover:bg-primary-50"
+                    className="block px-3 py-2 rounded-md text-sm text-gray-600 hover:text-primary-600 hover:bg-primary-50 transition-all"
                     onClick={() => {
                       setIsMobileMenuOpen(false);
                       closeAllDropdowns();
@@ -289,7 +289,7 @@ const Navbar = () => {
                   </Link>
                   <Link
                     to="/contact?section=email"
-                    className="block px-3 py-2 rounded-md text-sm text-gray-600 hover:text-primary-600 hover:bg-primary-50"
+                    className="block px-3 py-2 rounded-md text-sm text-gray-600 hover:text-primary-600 hover:bg-primary-50 transition-all"
                     onClick={() => {
                       setIsMobileMenuOpen(false);
                       closeAllDropdowns();
@@ -299,7 +299,7 @@ const Navbar = () => {
                   </Link>
                   <Link
                     to="/contact?section=location"
-                    className="block px-3 py-2 rounded-md text-sm text-gray-600 hover:text-primary-600 hover:bg-primary-50"
+                    className="block px-3 py-2 rounded-md text-sm text-gray-600 hover:text-primary-600 hover:bg-primary-50 transition-all"
                     onClick={() => {
                       setIsMobileMenuOpen(false);
                       closeAllDropdowns();
