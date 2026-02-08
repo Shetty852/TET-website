@@ -1,4 +1,5 @@
 import { Link } from 'react-router-dom';
+import schoolLogo from '../pages/Home/TET 2 (1).png';
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
@@ -9,7 +10,14 @@ const Footer = () => {
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 lg:gap-12">
           {/* About Section */}
           <div>
-            <h3 className="text-lg sm:text-xl font-bold mb-3 sm:mb-4">Talent Public School</h3>
+            <div className="flex items-center space-x-3 mb-3 sm:mb-4">
+              <img 
+                src={schoolLogo} 
+                alt="Talent Public School Logo" 
+                className="w-10 h-10 sm:w-12 sm:h-12 object-contain"
+              />
+              <h3 className="text-lg sm:text-xl font-bold">Talent Public School</h3>
+            </div>
             <p className="text-gray-300 text-sm sm:text-base leading-relaxed">
               Under Talent Educational Trust - Nurturing young minds through quality CBSE education from Nursery to Class 10.
             </p>

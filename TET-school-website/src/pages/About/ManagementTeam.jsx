@@ -1,4 +1,11 @@
-import { useState } from 'react';
+  import { useState } from 'react';
+import principalImage from './Assets/Gulnaz Khanum N(principal).png';
+import srinathImage from './Assets/Srinath H P.png';
+import manjunathImage from './Assets/Manjunath H P.png';
+import naveenRaiImage from './Assets/Naveen Rai N.png';
+import narayanaRaiImage from './Assets/Narayana Rai.png';
+import manjunathaRNImage from './Assets/Manjunatha R N.png';
+import krishnaMurthyImage from './Assets/Krishna Murthy H R.png';
 
 const ManagementTeam = () => {
   const [expandedId, setExpandedId] = useState(null);
@@ -6,75 +13,94 @@ const ManagementTeam = () => {
   const managementTeam = [
     {
       id: 1,
-      name: "Dr. Rajesh Kumar",
-      designation: "Chairman",
+      name: "Narayana Rai",
+      designation: "President",
       category: "Board of Directors",
-      photo: "RK",
-      email: "chairman@talentpublicschool.edu",
-      phone: "+91 98765 43210",
-      bio: "With over 25 years of experience in educational administration, Dr. Rajesh Kumar has been instrumental in shaping the vision and strategic direction of Talent Educational Trust. His dedication to educational excellence has led to numerous innovations in curriculum development and student welfare programs.",
-      qualifications: "Ph.D. in Educational Leadership, M.Ed., B.Ed.",
-      expertise: ["Strategic Planning", "Educational Policy", "Quality Assurance"]
+      photo: "NR",
+      image: narayanaRaiImage,
+      email: "president@talentpublicschool.edu",
+      phone: "+91 88611 86207",
+      bio: "As President of Talent Educational Trust, Narayana Rai provides strategic leadership and vision for the institution. His commitment to educational excellence and community development has been instrumental in establishing Talent Public School as a center of learning excellence in the region.",
+      qualifications: "M.A., Educational Leadership Certification",
+      expertise: ["Strategic Leadership", "Institutional Governance", "Community Relations"]
     },
     {
       id: 2,
-      name: "Mrs. Priya Sharma",
-      designation: "Managing Director",
+      name: "Srinath H P",
+      designation: "Director",
       category: "Board of Directors",
-      photo: "PS",
-      email: "md@talentpublicschool.edu",
-      phone: "+91 98765 43211",
-      bio: "Mrs. Priya Sharma brings extensive experience in educational management and organizational development. Under her leadership, the school has achieved remarkable growth and success in academic and co-curricular activities.",
-      qualifications: "MBA (Education Management), M.A. (Education), B.Ed.",
-      expertise: ["Operations Management", "Resource Planning", "Staff Development"]
+      photo: "SHP",
+      image: srinathImage,
+      email: "director@talentpublicschool.edu",
+      phone: "+91 88611 86207",
+      bio: "Srinath H P serves as Director with a focus on overseeing institutional development and ensuring alignment with educational standards. His expertise in administration and policy implementation drives the school's operational excellence and growth initiatives.",
+      qualifications: "Post Graduate in Management, Educational Administration",
+      expertise: ["Institutional Development", "Policy Implementation", "Quality Standards"]
     },
     {
       id: 3,
-      name: "Gulnaz Khanum N",
-      designation: "Principal",
-      category: "Academic Leadership",
-      photo: "GK",
-      email: "principal@talentpublicschool.edu",
-      phone: "+91 88611 53207",
-      bio: "As the Principal of Talent Public School, Gulnaz Khanum N leads with a student-centric approach, ensuring academic excellence and holistic development. Her innovative teaching methodologies and commitment to quality education have earned the school recognition and respect.",
-      qualifications: "M.Ed., B.Ed., Post Graduate in Educational Psychology",
-      expertise: ["Curriculum Development", "Pedagogy Innovation", "Student Welfare"]
+      name: "Manjunath H P",
+      designation: "Secretary",
+      category: "Board of Directors",
+      photo: "MHP",
+      image: manjunathImage,
+      email: "secretary@talentpublicschool.edu",
+      phone: "+91 88611 86207",
+      bio: "Manjunath H P, as Secretary of Talent Educational Trust, manages governance, compliance, and administrative coordination. His meticulous attention to regulatory requirements and organizational management ensures smooth institutional operations.",
+      qualifications: "M.Com., Legal Compliance Certification",
+      expertise: ["Governance", "Compliance Management", "Administrative Coordination"]
     },
     {
       id: 4,
-      name: "Mr. Anand Gowda",
-      designation: "Vice Principal",
-      category: "Academic Leadership",
-      photo: "AG",
-      email: "vp@talentpublicschool.edu",
-      phone: "+91 88611 53208",
-      bio: "Mr. Anand Gowda supports the academic programs with a focus on implementing modern teaching techniques and ensuring the smooth functioning of daily operations. His expertise in educational technology has modernized our learning environment.",
-      qualifications: "M.Sc., B.Ed., Certified Educational Administrator",
-      expertise: ["Educational Technology", "Academic Administration", "Teacher Training"]
+      name: "Manjunatha R N",
+      designation: "Director",
+      category: "Board of Directors",
+      photo: "MRN",
+      image: manjunathaRNImage,
+      email: "director2@talentpublicschool.edu",
+      phone: "+91 88611 86207",
+      bio: "Manjunatha R N contributes to the board's vision with extensive experience in educational planning and resource management. His strategic insights have been valuable in expanding the school's infrastructure and academic programs.",
+      qualifications: "M.A., Educational Planning & Management",
+      expertise: ["Educational Planning", "Resource Management", "Infrastructure Development"]
     },
     {
       id: 5,
-      name: "Dr. Meera Reddy",
-      designation: "Academic Coordinator",
-      category: "Academic Leadership",
-      photo: "MR",
-      email: "coordinator@talentpublicschool.edu",
-      phone: "+91 88611 53209",
-      bio: "Dr. Meera Reddy coordinates all academic activities and ensures alignment with CBSE guidelines. Her research in child psychology and learning methodologies has enhanced our teaching practices significantly.",
-      qualifications: "Ph.D. in Child Psychology, M.Ed., B.Ed.",
-      expertise: ["Learning Assessment", "Curriculum Coordination", "Educational Research"]
+      name: "Naveen Rai N",
+      designation: "Founder Director",
+      category: "Founders",
+      photo: "NRN",
+      image: naveenRaiImage,
+      email: "founder1@talentpublicschool.edu",
+      phone: "+91 88611 86207",
+      bio: "Naveen Rai N is one of the visionary founders of Talent Educational Trust. His pioneering efforts and dedication to providing quality education have laid the foundation for the institution's success and growth in shaping young minds.",
+      qualifications: "M.Sc., Founder & Educational Visionary",
+      expertise: ["Vision & Strategy", "Educational Philosophy", "Institutional Foundation"]
     },
     {
       id: 6,
-      name: "Mr. Suresh Patel",
-      designation: "Administrative Head",
-      category: "Administration",
-      photo: "SP",
-      email: "admin@talentpublicschool.edu",
-      phone: "+91 88611 53210",
-      bio: "Mr. Suresh Patel manages the administrative operations of the school with efficiency and dedication. His organizational skills ensure smooth day-to-day functioning and effective resource management.",
-      qualifications: "MBA (Administration), B.Com.",
-      expertise: ["Facility Management", "Administrative Systems", "Compliance"]
+      name: "Krishna Murthy H R",
+      designation: "Founder Director",
+      category: "Founders",
+      photo: "KMHR",
+      image: krishnaMurthyImage,
+      email: "founder2@talentpublicschool.edu",
+      phone: "+91 88611 86207",
+      bio: "Krishna Murthy H R co-founded Talent Educational Trust with a mission to transform education in the region. His innovative approach and commitment to holistic development have been central to the institution's founding principles and continued success.",
+      qualifications: "M.A., Founder & Education Pioneer",
+      expertise: ["Holistic Education", "Innovation in Learning", "Community Engagement"]
+    },
+    {
+      id: 7,
+      name: "Gulnaz Khanum N",
+      designation: "Principal",
+      category: "Academic Leadership",
+      photo: "GKN",
+      image: principalImage,
+      email: "45457@cbseshiksha.in",
+      phone: "+91 88611 86207",
+      bio: "As the Principal of Talent Public School, Gulnaz Khanum N leads with a student-centric approach, ensuring academic excellence and holistic development. Her innovative teaching methodologies, commitment to CBSE standards, and dedication to quality education have earned the school recognition and respect in the academic community.",
+      qualifications: "M.Ed., B.Ed., Post Graduate Diploma in Educational Management",
+      expertise: ["Academic Excellence", "Curriculum Development", "Student Welfare", "CBSE Standards"]
     }
   ];
 
@@ -88,6 +114,8 @@ const ManagementTeam = () => {
     switch (category) {
       case "Board of Directors":
         return "from-blue-600 to-indigo-700";
+      case "Founders":
+        return "from-amber-600 to-orange-700";
       case "Academic Leadership":
         return "from-purple-600 to-pink-600";
       case "Administration":
@@ -127,7 +155,7 @@ const ManagementTeam = () => {
               {category}
             </h3>
             
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-6">
+            <div className="grid grid-cols-1 gap-4 sm:gap-6">
               {managementTeam
                 .filter(member => member.category === category)
                 .map((member) => (
@@ -142,8 +170,16 @@ const ManagementTeam = () => {
                     >
                       <div className="flex items-start gap-3 sm:gap-4">
                         {/* Photo Avatar */}
-                        <div className={`flex-shrink-0 w-16 h-16 sm:w-20 sm:h-20 lg:w-24 lg:h-24 bg-gradient-to-br ${getCategoryColor(member.category)} rounded-xl sm:rounded-2xl flex items-center justify-center text-white font-bold text-xl sm:text-2xl lg:text-3xl shadow-lg`}>
-                          {member.photo}
+                        <div className={`flex-shrink-0 w-16 h-16 sm:w-20 sm:h-20 lg:w-24 lg:h-24 ${member.image ? '' : `bg-gradient-to-br ${getCategoryColor(member.category)}`} rounded-xl sm:rounded-2xl flex items-center justify-center text-white font-bold text-xl sm:text-2xl lg:text-3xl shadow-lg overflow-hidden`}>
+                          {member.image ? (
+                            <img 
+                              src={member.image} 
+                              alt={member.name}
+                              className="w-full h-full object-cover object-top"
+                            />
+                          ) : (
+                            <span>{member.photo}</span>
+                          )}
                         </div>
                         
                         {/* Name and Designation */}

@@ -28,19 +28,18 @@ const VisionMission = () => {
             Our Vision
           </h3>
           <p className="text-gray-800 text-xl md:text-2xl leading-relaxed text-center max-w-5xl mx-auto font-light mb-8">
-            To be a globally recognized institution of educational excellence that nurtures innovative 
-            thinkers, compassionate leaders, and responsible global citizens who make meaningful 
-            contributions to society.
+            "Unleashing the Potential: A Vision for Tomorrow's Education"
           </p>
         </div>
         
         <div className="p-6 sm:p-8 lg:p-12 bg-gradient-to-br from-white to-gray-50">
           <div className="bg-white rounded-xl shadow-md p-6 sm:p-8 border-l-4 border-blue-600">
             <p className="text-gray-700 text-lg leading-relaxed">
-              We envision a future where our graduates are equipped with the knowledge, skills, and 
-              values necessary to thrive in an ever-changing world. We strive to create an environment 
-              where every student can discover their unique potential and pursue their dreams with 
-              confidence and determination.
+              At Talent Public School, we envision creating an educational ecosystem where every student's 
+              unique potential is discovered, nurtured, and unleashed. We believe in empowering young minds 
+              with the knowledge, skills, and values needed to thrive in tomorrow's dynamic world. Through 
+              innovative CBSE curriculum delivery, state-of-the-art infrastructure, and dedicated mentorship, 
+              we aim to shape confident, creative, and compassionate individuals ready to lead and transform society.
             </p>
           </div>
         </div>
@@ -64,8 +63,11 @@ const VisionMission = () => {
             Our Mission
           </h3>
           <p className="text-gray-800 text-xl md:text-2xl leading-relaxed text-center max-w-5xl mx-auto font-light mb-8">
-            To provide a holistic, student-centered education that develops intellectual curiosity, 
-            critical thinking, and a lifelong love of learning in a safe and supportive environment.
+            To provide quality CBSE education from Nursery to Class 10 in a nurturing environment that 
+            fosters academic excellence, character development, and holistic growth. We are committed to 
+            empowering every student with knowledge, values, and skills through innovative teaching methods, 
+            world-class infrastructure, and dedicated mentorship, preparing them to become responsible, 
+            confident, and compassionate citizens who contribute meaningfully to society.
           </p>
         </div>
 
@@ -81,8 +83,9 @@ const VisionMission = () => {
                 <h4 className="font-bold text-xl text-gray-800">Academic Excellence</h4>
               </div>
               <p className="text-gray-600 leading-relaxed">
-                Deliver rigorous, innovative curriculum that challenges students to achieve their 
-                highest academic potential and prepares them for future success.
+                Deliver rigorous CBSE-aligned curriculum from Nursery to Class 10 with innovative 
+                teaching methods that challenge students to achieve their highest academic potential 
+                in our state-of-the-art facilities.
               </p>
             </div>
 
@@ -96,8 +99,8 @@ const VisionMission = () => {
                 <h4 className="font-bold text-xl text-gray-800">Character Development</h4>
               </div>
               <p className="text-gray-600 leading-relaxed">
-                Foster strong moral values, integrity, empathy, and respect for diversity through 
-                example, guidance, and meaningful experiences.
+                Nurture strong moral values, integrity, empathy, and respect for diversity across 
+                our 87,120 sq. meter campus with dedicated programs and meaningful experiences.
               </p>
             </div>
 
@@ -112,7 +115,7 @@ const VisionMission = () => {
               </div>
               <p className="text-gray-600 leading-relaxed">
                 Support the physical, emotional, social, and intellectual development of every 
-                student through comprehensive programs and activities.
+                student through comprehensive programs in our 50 classrooms and 55 specialized laboratories.
               </p>
             </div>
 
@@ -126,8 +129,8 @@ const VisionMission = () => {
                 <h4 className="font-bold text-xl text-gray-800">Community Partnership</h4>
               </div>
               <p className="text-gray-600 leading-relaxed">
-                Build strong partnerships with families and the community to create a collaborative 
-                network that supports student success and well-being.
+                Build strong partnerships with families in Hunsur and the surrounding community to 
+                create a collaborative network that supports student success and well-being.
               </p>
             </div>
           </div>
@@ -137,7 +140,7 @@ const VisionMission = () => {
       {/* Core Values */}
       <div className="bg-gradient-to-br from-gray-900 via-gray-800 to-gray-900 rounded-xl sm:rounded-2xl shadow-2xl p-6 sm:p-10 lg:p-12 text-white">
         <h3 className="text-3xl md:text-4xl font-bold mb-4 text-center">Our Core Values</h3>
-        <p className="text-gray-300 text-center mb-12 text-lg">The principles that guide everything we do</p>
+        <p className="text-gray-300 text-center mb-12 text-lg">The principles that guide Talent Public School</p>
         
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           <div className="group text-center hover:transform hover:scale-105 transition-all duration-300">
@@ -148,7 +151,7 @@ const VisionMission = () => {
               <div className="absolute -top-1 -right-1 w-6 h-6 bg-white rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
             </div>
             <h4 className="font-bold text-2xl mb-3 text-yellow-400">Excellence</h4>
-            <p className="text-gray-300 leading-relaxed">Striving for the highest standards in everything we do</p>
+            <p className="text-gray-300 leading-relaxed">Pursuing the highest standards in CBSE education and character building</p>
           </div>
           
           <div className="group text-center hover:transform hover:scale-105 transition-all duration-300">
@@ -159,18 +162,18 @@ const VisionMission = () => {
               <div className="absolute -top-1 -right-1 w-6 h-6 bg-white rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
             </div>
             <h4 className="font-bold text-2xl mb-3 text-blue-400">Integrity</h4>
-            <p className="text-gray-300 leading-relaxed">Acting with honesty, responsibility, and moral courage</p>
+            <p className="text-gray-300 leading-relaxed">Upholding honesty, responsibility, and ethical values in all we do</p>
           </div>
           
           <div className="group text-center hover:transform hover:scale-105 transition-all duration-300">
             <div className="relative inline-block mb-6">
               <div className="w-20 h-20 bg-gradient-to-br from-green-400 to-emerald-600 rounded-2xl flex items-center justify-center shadow-xl group-hover:shadow-2xl group-hover:rotate-6 transition-all duration-300">
-                <span className="text-white font-bold text-3xl">R</span>
+                <span className="text-white font-bold text-3xl">I</span>
               </div>
               <div className="absolute -top-1 -right-1 w-6 h-6 bg-white rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
             </div>
-            <h4 className="font-bold text-2xl mb-3 text-green-400">Respect</h4>
-            <p className="text-gray-300 leading-relaxed">Valuing diversity and treating everyone with dignity</p>
+            <h4 className="font-bold text-2xl mb-3 text-green-400">Innovation</h4>
+            <p className="text-gray-300 leading-relaxed">Embracing creative teaching methods and modern educational technology</p>
           </div>
         </div>
       </div>

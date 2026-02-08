@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
+import schoolLogo from '../pages/Home/TET 2 (1).png';
 
 const Navbar = () => {
   const [isAboutOpen, setIsAboutOpen] = useState(false);
@@ -21,9 +22,11 @@ const Navbar = () => {
             className="flex items-center space-x-2 sm:space-x-3"
             onClick={closeAllDropdowns}
           >
-            <div className="w-8 h-8 sm:w-10 sm:h-10 lg:w-12 lg:h-12 bg-primary-600 rounded-full flex items-center justify-center flex-shrink-0">
-              <span className="text-white font-bold text-sm sm:text-xl lg:text-2xl">TPS</span>
-            </div>
+            <img 
+              src={schoolLogo} 
+              alt="Talent Public School Logo" 
+              className="w-8 h-8 sm:w-10 sm:h-10 lg:w-12 lg:h-12 object-contain flex-shrink-0"
+            />
             <span className="text-sm sm:text-lg lg:text-xl font-bold text-gray-800 truncate max-w-[180px] sm:max-w-none">
               Talent Public School
             </span>
@@ -86,6 +89,13 @@ const Navbar = () => {
                       onClick={closeAllDropdowns}
                     >
                       Vision & Mission
+                    </Link>
+                    <Link
+                      to="/about?section=facilities"
+                      className="block px-4 py-2 text-sm text-gray-700 hover:bg-primary-50 hover:text-primary-600 transition-colors duration-200"
+                      onClick={closeAllDropdowns}
+                    >
+                      Facilities
                     </Link>
                   </div>
                 </div>
@@ -232,6 +242,16 @@ const Navbar = () => {
                     }}
                   >
                     Vision & Mission
+                  </Link>
+                  <Link
+                    to="/about?section=facilities"
+                    className="block px-3 py-2 rounded-md text-sm text-gray-600 hover:text-primary-600 hover:bg-primary-50"
+                    onClick={() => {
+                      setIsMobileMenuOpen(false);
+                      closeAllDropdowns();
+                    }}
+                  >
+                    Facilities
                   </Link>
                 </div>
               )}
