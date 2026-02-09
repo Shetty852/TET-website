@@ -4,6 +4,7 @@ import OurSchool from './OurSchool';
 import ManagementTeam from './ManagementTeam';
 import VisionMission from './VisionMission';
 import Facilities from './Facilities';
+import Achievers from './Achievers';
 import affiliationCert from './Assets/Certificates/AFFILIATION 20256-26.png';
 import buildingSafetyCert from './Assets/Certificates/BUILDING SAFETY.png';
 import drinkingWaterCert from './Assets/Certificates/DRINKING WATER.png';
@@ -81,13 +82,18 @@ const About = () => {
         </div>
 
         {/* Vision & Mission Section */}
-        <div id="vision-mission" className="scroll-mt-20 transform transition-all duration-500 hover:scale-[1.01]">
+        {/* <div id="vision-mission" className="scroll-mt-20 transform transition-all duration-500 hover:scale-[1.01]">
           <VisionMission />
-        </div>
+        </div> */}
 
         {/* Facilities Section */}
         <div id="facilities" className="scroll-mt-20">
           <Facilities />
+        </div>
+
+        {/* Achievers Section */}
+        <div id="achievers" className="scroll-mt-20">
+          <Achievers />
         </div>
 
         {/* Certificates Section */}
@@ -243,28 +249,6 @@ const About = () => {
                     className="w-full h-auto"
                   />
                 </div>
-              </div>
-
-              {/* Modal Footer */}
-              <div className="bg-white border-t-2 border-gray-100 p-4 flex gap-3 justify-center">
-                <button
-                  onClick={() => window.open(selectedCertificate.image, '_blank')}
-                  className="bg-gradient-to-r from-green-600 to-emerald-600 hover:from-green-700 hover:to-emerald-700 text-white font-semibold py-2.5 px-6 rounded-lg transition-all duration-300 shadow-md hover:shadow-lg transform hover:scale-105 flex items-center gap-2"
-                >
-                  <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
-                  </svg>
-                  Open in New Tab
-                </button>
-                <button
-                  onClick={() => setSelectedCertificate(null)}
-                  className="bg-gradient-to-r from-gray-600 to-gray-700 hover:from-gray-700 hover:to-gray-800 text-white font-semibold py-2.5 px-6 rounded-lg transition-all duration-300 shadow-md hover:shadow-lg transform hover:scale-105 flex items-center gap-2"
-                >
-                  <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
-                  </svg>
-                  Close
-                </button>
               </div>
             </div>
           </div>

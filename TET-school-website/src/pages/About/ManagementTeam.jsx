@@ -17,36 +17,36 @@ const ManagementTeam = () => {
     },
     {
       id: 2,
-      name: "H P Manjunath",
+      name: "Manjunath H P",
       designation: "Honorable Secretary",
       image: manjunathImage,
       order: 2
     },
     {
       id: 3,
-      name: "Krishna Murthy",
-      designation: "Founder Trustee",
+      name: "Krishna Murthy H R",
+      designation: "Founder Director",
       image: krishnaMurthyImage,
       order: 3
     },
     {
       id: 4,
-      name: "Naveen N Rai",
-      designation: "Founder Trustee",
+      name: "Naveen Rai N",
+      designation: "Founder Director",
       image: naveenRaiImage,
       order: 4
     },
     {
       id: 5,
-      name: "Manjunath R N",
-      designation: "Founder Trustee",
+      name: "Manjunatha R N",
+      designation: "Director",
       image: manjunathaRNImage,
       order: 5
     },
     {
       id: 6,
       name: "Srinath H P",
-      designation: "Founder Trustee",
+      designation: "Director",
       image: srinathImage,
       order: 6
     },
@@ -117,12 +117,12 @@ const ManagementTeam = () => {
               
               {/* Info */}
               <div className="p-2 text-center bg-gradient-to-br from-white to-gray-50">
-                <p className="text-xs text-red-500 font-semibold mb-1 uppercase tracking-wider">
-                  {member.designation}
-                </p>
                 <h3 className="text-xs sm:text-sm font-bold text-gray-900 uppercase tracking-wide">
                   {member.name}
                 </h3>
+                <p className="text-xs text-red-500 font-semibold mb-1 uppercase tracking-wider">
+                  {member.designation}
+                </p>
               </div>
             </div>
           ))}
