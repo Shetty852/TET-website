@@ -76,31 +76,13 @@ const Facilities = () => {
         </p>
       </div>
 
-      {/* Campus Overview Stats */}
-      <div className="grid grid-cols-2 md:grid-cols-4 gap-3 sm:gap-4">
-        <div className="bg-gradient-to-br from-blue-50 to-blue-100 p-4 rounded-xl text-center border-t-4 border-blue-500 shadow-lg hover:shadow-xl transition-shadow">
-          <p className="text-4xl font-bold text-blue-600 mb-2">50</p>
-          <p className="text-gray-700 font-semibold text-sm">Classrooms</p>
-        </div>
-        <div className="bg-gradient-to-br from-purple-50 to-purple-100 p-4 rounded-xl text-center border-t-4 border-purple-500 shadow-lg hover:shadow-xl transition-shadow">
-          <p className="text-4xl font-bold text-purple-600 mb-2">55</p>
-          <p className="text-gray-700 font-semibold text-sm">Laboratories</p>
-        </div>
-        <div className="bg-gradient-to-br from-green-50 to-green-100 p-4 rounded-xl text-center border-t-4 border-green-500 shadow-lg hover:shadow-xl transition-shadow">
-          <p className="text-4xl font-bold text-green-600 mb-2">100m²</p>
-          <p className="text-gray-700 font-semibold text-sm">Library</p>
-        </div>
-        <div className="bg-gradient-to-br from-orange-50 to-orange-100 p-4 rounded-xl text-center border-t-4 border-orange-500 shadow-lg hover:shadow-xl transition-shadow">
-          <p className="text-3xl font-bold text-orange-600 mb-2">87,120m²</p>
-          <p className="text-gray-700 font-semibold text-sm">Campus Area</p>
-        </div>
-      </div>
+      
 
       {/* Main Facilities Grid */}
       <div>
-        <h3 className="text-2xl md:text-3xl font-bold text-gray-800 mb-8 text-center">
+        {/* <h3 className="text-2xl md:text-3xl font-bold text-gray-800 mb-8 text-center">
           Our World-Class Facilities
-        </h3>
+        </h3> */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-5">
           {facilities.map((facility, index) => (
             <div
