@@ -1,4 +1,5 @@
 import principalImg from './Assets/Gulnaz Khanum N(principal).png';
+import ParliamentCarousel from './ParliamentCarousel';
 
 const OurSchool = () => {
   return (
@@ -81,6 +82,20 @@ const OurSchool = () => {
               </div>
             </div>
           </div>
+        </div>
+
+        {/* Parliament Carousel Section */}
+        <div className="mt-6">
+          <div className="text-center mb-4">
+            <h3 className="text-xl sm:text-2xl font-bold bg-gradient-to-r from-primary-600 via-blue-600 to-purple-600 bg-clip-text text-transparent mb-1">
+              School Parliament
+            </h3>
+            <div className="h-1 bg-gradient-to-r from-primary-500 via-blue-500 to-purple-500 rounded-full mx-auto w-24"></div>
+            <p className="text-gray-600 text-xs sm:text-sm mt-2">
+              Empowering student leadership and democratic values
+            </p>
+          </div>
+          <ParliamentCarousel />
         </div>
       </div>
     </div>
