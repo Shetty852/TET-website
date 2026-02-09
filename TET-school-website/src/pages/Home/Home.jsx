@@ -1,5 +1,9 @@
 import { Link } from 'react-router-dom';
 import homepageImage from './assets/home page image.webp';
+import lab1 from './assets/Lab image1.webp';
+import lab2 from './assets/Lab image2.webp';
+import lab3 from './assets/Lab image3.webp';
+
 
 const Home = () => {
  
@@ -37,12 +41,15 @@ const Home = () => {
               🎓 Talent Educational Trust | CBSE Affiliation No: 830494
             </div>
             
-            <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold leading-tight px-4 sm:px-0 transform hover:scale-105 transition-transform duration-500">
-              <span className="block animate-slideInLeft">Talent Public School</span>
-              <span className="block bg-gradient-to-r from-primary-100 via-blue-100 to-purple-100 bg-clip-text text-transparent mt-2 animate-slideInRight">
-                Empowering Minds, Shaping Futures
-              </span>
-            </h1>
+           <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold leading-tight px-4 sm:px-0 text-white">
+  <span className="block animate-slideInLeft">
+    Talent Public School
+  </span>
+  <span className="block mt-2 animate-slideInRight">
+    Empowering Minds, Shaping Futures
+  </span>
+</h1>
+
             
             <p className="text-sm sm:text-base md:text-lg lg:text-xl xl:text-2xl max-w-4xl mx-auto text-primary-50 leading-relaxed px-4 sm:px-6 animate-fadeIn">
               Located in Hunsur, Karnataka - Where quality CBSE education meets innovation. We nurture young minds from Nursery to Class 10, 
@@ -72,6 +79,8 @@ const Home = () => {
 
        
       </section>
+  
+
 
       {/* Stats Section */}
       <section className="py-6 sm:py-8 bg-gray-50">
@@ -93,7 +102,44 @@ const Home = () => {
         </div>
       </section>
 
-     
+        <section className="py-12 sm:py-16 bg-white">
+  <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+
+    {/* Heading */}
+    <div className="text-center mb-10">
+      <h2 className="text-3xl sm:text-4xl md:text-5xl font-extrabold tracking-tight leading-[1.2] py-1 text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-indigo-600">
+  Why Choose Us
+</h2>
+
+
+      <p className="mt-4 text-base sm:text-lg text-gray-600 font-medium leading-relaxed max-w-2xl mx-auto">
+        World-class laboratories that support hands-on learning, innovation, and real-world scientific exploration.
+      </p>
+    </div>
+
+    {/* ALWAYS 3 IN ONE ROW */}
+    <div className="grid grid-cols-3 gap-4">
+      <img
+        src={lab1}
+        alt="Science Lab"
+        className="w-full h-40 sm:h-56 object-cover rounded-lg shadow-md"
+      />
+
+      <img
+        src={lab2}
+        alt="Computer Lab"
+        className="w-full h-40 sm:h-56 object-cover rounded-lg shadow-md"
+      />
+
+      <img
+        src={lab3}
+        alt="Math Lab"
+        className="w-full h-40 sm:h-56 object-cover rounded-lg shadow-md"
+      />
+    </div>
+
+  </div>
+</section>
 
      
       
@@ -112,26 +158,7 @@ const Home = () => {
             Discover how Talent Public School can be the perfect place for your child's educational journey. 
             Visit our campus in Hunsur and see the difference firsthand.
           </p>
-          <div className="flex flex-col sm:flex-row justify-center gap-3 sm:gap-4">
-            <Link
-              to="/contact"
-              className="group inline-flex items-center justify-center bg-white text-primary-600 px-6 sm:px-8 py-3 sm:py-4 rounded-xl font-semibold text-base sm:text-lg hover:bg-primary-50 transition-all duration-300 shadow-2xl hover:scale-105"
-            >
-              Schedule a Visit
-              <svg className="w-4 h-4 sm:w-5 sm:h-5 ml-2 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0l-5 5m5-5H6" />
-              </svg>
-            </Link>
-            <Link
-              to="/about"
-              className="group inline-flex items-center justify-center bg-primary-500/20 backdrop-blur-sm text-white px-6 sm:px-8 py-3 sm:py-4 rounded-xl font-semibold text-base sm:text-lg hover:bg-primary-500/30 transition-all duration-300 border-2 border-white/30 hover:border-white/50"
-            >
-              Learn More
-              <svg className="w-4 h-4 sm:w-5 sm:h-5 ml-2 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0l-5 5m5-5H6" />
-              </svg>
-            </Link>
-          </div>
+          
           
           <div className="mt-8 sm:mt-12 pt-8 sm:pt-12 border-t border-white/20">
             <p className="text-primary-100 mb-4 text-sm sm:text-base">
