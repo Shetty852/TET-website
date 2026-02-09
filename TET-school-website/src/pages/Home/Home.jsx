@@ -140,6 +140,54 @@ const Home = () => {
 
   </div>
 </section>
+    
+{/* Vision & Mission Section */}
+<section className="py-12 sm:py-16 bg-gray-50">
+  <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+
+    <div className="bg-white rounded-xl sm:rounded-2xl shadow-xl overflow-hidden">
+      
+      {/* Header */}
+      <div className="bg-gradient-to-r from-blue-600 to-indigo-700 p-4 text-white text-center">
+        <h2 className="text-2xl sm:text-3xl font-bold">
+          Vision & Mission
+        </h2>
+      </div>
+
+      <div className="p-4 sm:p-6">
+
+        {/* Vision & Mission */}
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
+
+          {/* Vision */}
+          <div className="bg-gradient-to-br from-blue-50 to-indigo-50 rounded-lg p-4 border-l-4 border-blue-600">
+            <h3 className="text-xl font-bold text-blue-700 mb-2">
+              Our Vision
+            </h3>
+            <p className="text-gray-700 text-sm leading-relaxed">
+              Creating an educational ecosystem where every student’s potential is discovered,
+              nurtured, and empowered to thrive in a dynamic world through innovation and values.
+            </p>
+          </div>
+
+          {/* Mission */}
+          <div className="bg-gradient-to-br from-indigo-50 to-purple-50 rounded-lg p-4 border-l-4 border-indigo-600">
+            <h3 className="text-xl font-bold text-indigo-700 mb-2">
+              Our Mission
+            </h3>
+            <p className="text-gray-700 text-sm leading-relaxed">
+              Providing quality CBSE education from Nursery to Class 10, fostering academic excellence,
+              character development, and holistic growth through dedicated mentorship.
+            </p>
+          </div>
+
+        </div>
+
+      </div>
+    </div>
+
+  </div>
+</section>
 
      
       
@@ -160,7 +208,8 @@ const Home = () => {
           </p>
           
           
-          <div className="mt-8 sm:mt-12 pt-8 sm:pt-12 border-t border-white/20">
+          <div className="mt-4 pt-2">
+
             <p className="text-primary-100 mb-4 text-sm sm:text-base">
               Visit us or get in touch!
             </p>
