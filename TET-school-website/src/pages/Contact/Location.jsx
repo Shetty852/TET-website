@@ -35,7 +35,7 @@ const Location = () => {
         {/* Google Maps Embed */}
         <div className="bg-gray-200 rounded-lg overflow-hidden border border-gray-200 shadow-lg transition-all duration-300 hover:scale-[1.01] hover:shadow-xl" style={{ height: '450px' }}>
           <iframe
-            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3897.9896!2d76.6050376!3d12.334154!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3baf7a57dda7b52b%3A0x682bc429d6d7a54!2s8JM3%2BMX9%2C%20Vijayanagar%2C%20Mysuru%2C%20Karnataka%20570017!5e0!3m2!1sen!2sin!4v1707321000000!5m2!1sen!2sin"
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15592.5!2d76.3044744!3d12.3115309!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3ba5851b403de1a7%3A0x4fdb19b7d57bdd80!2sTalent%20High%20School%20And%20Pu%20College%2C%20Hunsur!5e0!3m2!1sen!2sin!4v1739145000000!5m2!1sen!2sin"
             width="100%"
             height="100%"
             style={{ border: 0 }}

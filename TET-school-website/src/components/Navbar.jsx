@@ -83,19 +83,26 @@ const Navbar = () => {
                     >
                       Management Team
                     </Link>
-                    <Link
+                    {/* <Link
                       to="/about?section=vision-mission"
                       className="block px-4 py-2 text-sm text-gray-700 hover:bg-primary-50 hover:text-primary-600 transition-all duration-200"
                       onClick={closeAllDropdowns}
                     >
                       Vision & Mission
-                    </Link>
+                    </Link> */}
                     <Link
                       to="/about?section=facilities"
                       className="block px-4 py-2 text-sm text-gray-700 hover:bg-primary-50 hover:text-primary-600 transition-all duration-200"
                       onClick={closeAllDropdowns}
                     >
                       Facilities
+                    </Link>
+                    <Link
+                      to="/about?section=achievers"
+                      className="block px-4 py-2 text-sm text-gray-700 hover:bg-primary-50 hover:text-primary-600 transition-all duration-200"
+                      onClick={closeAllDropdowns}
+                    >
+                      Achievers
                     </Link>
                   </div>
                 </div>
