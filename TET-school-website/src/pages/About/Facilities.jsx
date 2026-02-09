@@ -168,73 +168,7 @@ const Facilities = () => {
         </div>
       </div>
 
-      {/* Safety & Security */}
-      <div className="bg-gradient-to-br from-green-50 via-white to-blue-50 rounded-xl sm:rounded-2xl shadow-xl p-4 sm:p-5 border border-green-200">
-        <h3 className="text-xl sm:text-2xl font-bold bg-gradient-to-r from-green-600 to-blue-600 bg-clip-text text-transparent mb-3 text-center">
-          Safety & Security
-        </h3>
-        <p className="text-gray-600 text-center mb-4 text-xs sm:text-sm">
-          Comprehensive safety measures throughout campus
-        </p>
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-3">
-          <div className="bg-white p-3 rounded-xl shadow-md hover:shadow-lg transition-all duration-300 border border-green-200 hover:border-green-400 text-center group">
-            <div className="w-10 h-10 bg-gradient-to-br from-green-500 to-green-600 rounded-full flex items-center justify-center mx-auto mb-2 group-hover:scale-110 transition-transform">
-              <svg className="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
-              </svg>
-            </div>
-            <h4 className="font-bold text-xs text-gray-800 mb-1">Secure Campus</h4>
-            <p className="text-xs text-gray-600">Gated & Controlled</p>
-          </div>
-
-          <div className="bg-white p-3 rounded-xl shadow-md hover:shadow-lg transition-all duration-300 border border-blue-200 hover:border-blue-400 text-center group">
-            <div className="w-10 h-10 bg-gradient-to-br from-blue-500 to-blue-600 rounded-full flex items-center justify-center mx-auto mb-2 group-hover:scale-110 transition-transform">
-              <svg className="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 17h5l-1.405-1.405A2.032 2.032 0 0118 14.158V11a6.002 6.002 0 00-4-5.659V5a2 2 0 10-4 0v.341C7.67 6.165 6 8.388 6 11v3.159c0 .538-.214 1.055-.595 1.436L4 17h5m6 0v1a3 3 0 11-6 0v-1m6 0H9" />
-              </svg>
-            </div>
-            <h4 className="font-bold text-xs text-gray-800 mb-1">Emergency</h4>
-            <p className="text-xs text-gray-600">Fire & Response</p>
-          </div>
-
-          <div className="bg-white p-3 rounded-xl shadow-md hover:shadow-lg transition-all duration-300 border border-purple-200 hover:border-purple-400 text-center group">
-            <div className="w-10 h-10 bg-gradient-to-br from-purple-500 to-purple-600 rounded-full flex items-center justify-center mx-auto mb-2 group-hover:scale-110 transition-transform">
-              <svg className="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197M13 7a4 4 0 11-8 0 4 4 0 018 0z" />
-              </svg>
-            </div>
-            <h4 className="font-bold text-xs text-gray-800 mb-1">Trained Staff</h4>
-            <p className="text-xs text-gray-600">Safety Experts</p>
-          </div>
-
-          <div className="bg-white p-3 rounded-xl shadow-md hover:shadow-lg transition-all duration-300 border border-red-200 hover:border-red-400 text-center group">
-            <div className="w-10 h-10 bg-gradient-to-br from-red-500 to-red-600 rounded-full flex items-center justify-center mx-auto mb-2 group-hover:scale-110 transition-transform">
-              <svg className="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
-              </svg>
-            </div>
-            <h4 className="font-bold text-xs text-gray-800 mb-1">First Aid</h4>
-            <p className="text-xs text-gray-600">Medical Room</p>
-          </div>
-        </div>
-      </div>
-
-      {/* Call to Action */}
-      <div className="bg-gradient-to-r from-primary-700 to-primary-900 rounded-xl sm:rounded-2xl shadow-2xl p-6 sm:p-8 lg:p-10 text-white text-center">
-        <h3 className="text-2xl md:text-3xl font-bold mb-4">
-          Experience Our Campus
-        </h3>
-        <p className="text-primary-100 text-lg mb-6 max-w-2xl mx-auto">
-          Visit Talent Public School to see our world-class facilities firsthand. Schedule a campus 
-          tour to explore our infrastructure and meet our dedicated team.
-        </p>
-        <a
-          href="/contact"
-          className="inline-block bg-white text-primary-700 px-8 py-3 rounded-xl font-semibold text-lg hover:bg-primary-50 transition-colors duration-200 shadow-lg hover:shadow-xl"
-        >
-          Schedule a Visit
-        </a>
-      </div>
+      
     </div>
   );
 };
