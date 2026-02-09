@@ -14,11 +14,11 @@ const OurSchool = () => {
         {/* Quick Stats - Compact Row */}
         <div className="grid grid-cols-3 sm:grid-cols-6 gap-2 my-3">
           <div className="bg-gradient-to-br from-blue-50 to-blue-100 p-2 rounded-lg text-center border-l-2 border-blue-500 hover:shadow-lg hover:-translate-y-1 transition-all duration-300 cursor-default">
-            <p className="text-xs text-blue-700 font-semibold">CBSE No.</p>
+            <p className="text-xs text-blue-700 font-semibold">Affiliation No.</p>
             <p className="text-lg font-bold text-blue-900">830494</p>
           </div>
           <div className="bg-gradient-to-br from-green-50 to-green-100 p-2 rounded-lg text-center border-l-2 border-green-500 hover:shadow-lg hover:-translate-y-1 transition-all duration-300 cursor-default">
-            <p className="text-xs text-green-700 font-semibold">Code</p>
+            <p className="text-xs text-green-700 font-semibold">School Code</p>
             <p className="text-lg font-bold text-green-900">45457</p>
           </div>
           <div className="bg-gradient-to-br from-purple-50 to-purple-100 p-2 rounded-lg text-center border-l-2 border-purple-500 hover:shadow-lg hover:-translate-y-1 transition-all duration-300 cursor-default">
