@@ -25,7 +25,7 @@ const Navbar = () => {
             <img 
               src={schoolLogo} 
               alt="Talent Public School Logo" 
-              className="w-8 h-8 sm:w-10 sm:h-10 lg:w-12 lg:h-12 object-contain flex-shrink-0 transform group-hover:scale-110 transition-transform duration-300"
+              className="w-10 h-10 sm:w-12 sm:h-12 lg:w-14 lg:h-14 object-contain flex-shrink-0 transform group-hover:scale-110 transition-transform duration-300"
             />
             <span className="text-sm sm:text-lg lg:text-xl font-bold text-gray-800 truncate max-w-[180px] sm:max-w-none group-hover:text-primary-600 transition-colors">
               Talent Public School

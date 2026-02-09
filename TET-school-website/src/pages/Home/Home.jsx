@@ -1,4 +1,5 @@
 import { Link } from 'react-router-dom';
+import homepageImage from './assets/home page image.webp';
 
 const Home = () => {
   const features = [
@@ -84,14 +85,22 @@ const Home = () => {
   ];
 
   return (
-    <div className="min-h-screen">
-      {/* Hero Section */}
-      <section className="relative bg-gradient-to-br from-primary-600 via-primary-700 to-primary-900 text-white overflow-hidden">
-        {/* Decorative elements */}
-        <div className="absolute inset-0 bg-grid-white/5 bg-[size:20px_20px]"></div>
-        <div className="absolute top-0 right-0 w-64 h-64 sm:w-96 sm:h-96 bg-primary-500/20 rounded-full blur-3xl animate-pulse"></div>
-        <div className="absolute bottom-0 left-0 w-64 h-64 sm:w-96 sm:h-96 bg-primary-400/20 rounded-full blur-3xl animate-pulse"></div>
-        <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-96 h-96 bg-blue-500/10 rounded-full blur-3xl animate-pulse"></div>
+   <div className="min-h-screen">
+  {/* Hero Section */}
+  <section className="relative bg-gradient-to-br from-blue-400 via-blue-500 to-indigo-600 text-white overflow-hidden">
+    {/* Background Image */}
+    <div 
+      className="absolute inset-0 bg-cover bg-center bg-no-repeat opacity-60"
+      style={{
+        backgroundImage: `url(${homepageImage})`
+      }}
+    ></div>
+    
+    {/* Decorative elements */}
+    <div className="absolute inset-0 bg-grid-white/5 bg-[size:20px_20px]"></div>
+    <div className="absolute top-0 right-0 w-64 h-64 sm:w-96 sm:h-96 bg-primary-500/20 rounded-full blur-3xl animate-pulse"></div>
+    <div className="absolute bottom-0 left-0 w-64 h-64 sm:w-96 sm:h-96 bg-primary-400/20 rounded-full blur-3xl animate-pulse"></div>
+    <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-96 h-96 bg-blue-500/10 rounded-full blur-3xl animate-pulse"></div>
         
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-12 md:py-16">
           <div className="text-center space-y-3 sm:space-y-4 animate-fadeIn">
@@ -114,7 +123,7 @@ const Home = () => {
             <div className="flex flex-col sm:flex-row justify-center gap-3 sm:gap-4 pt-2 sm:pt-4 px-4 sm:px-0 animate-fadeIn">
               <Link
                 to="/about"
-                className="group relative overflow-hidden bg-white text-primary-600 px-6 sm:px-8 py-3 sm:py-4 rounded-xl font-semibold text-base sm:text-lg transition-all duration-300 shadow-xl hover:shadow-2xl hover:scale-105 transform"
+                className="group relative overflow-hidden bg-white text-primary-600 px-6 sm:px-8 py-3 sm:py-4 rounded font-semibold text-base sm:text-lg transition-all duration-300 shadow-xl hover:shadow-2xl hover:scale-105 transform"
               >
                 <span className="relative z-10">Discover Our Story</span>
                 <span className="inline-block ml-2 relative z-10 group-hover:translate-x-1 transition-transform">→</span>
@@ -122,7 +131,7 @@ const Home = () => {
               </Link>
               <Link
                 to="/contact"
-                className="group relative overflow-hidden bg-primary-500/20 backdrop-blur-sm text-white px-6 sm:px-8 py-3 sm:py-4 rounded-xl font-semibold text-base sm:text-lg transition-all duration-300 border-2 border-white/30 hover:border-white/50 shadow-xl hover:shadow-2xl hover:scale-105 transform"
+                className="group relative overflow-hidden bg-primary-500/20 backdrop-blur-sm text-white px-6 sm:px-8 py-3 sm:py-4 rounded font-semibold text-base sm:text-lg transition-all duration-300 border-2 border-white/30 hover:border-white/50 shadow-xl hover:shadow-2xl hover:scale-105 transform"
               >
                 <span className="relative z-10">Schedule a Visit</span>
                 <span className="inline-block ml-2 relative z-10 group-hover:translate-x-1 transition-transform">→</span>
@@ -132,12 +141,7 @@ const Home = () => {
           </div>
         </div>
 
-        {/* Wave divider */}
-        <div className="absolute bottom-0 left-0 right-0">
-          <svg viewBox="0 0 1440 120" fill="none" xmlns="http://www.w3.org/2000/svg" className="w-full h-auto">
-            <path d="M0 120L60 105C120 90 240 60 360 45C480 30 600 30 720 37.5C840 45 960 60 1080 67.5C1200 75 1320 75 1380 75L1440 75V120H1380C1320 120 1200 120 1080 120C960 120 840 120 720 120C600 120 480 120 360 120C240 120 120 120 60 120H0Z" fill="rgb(249, 250, 251)"/>
-          </svg>
-        </div>
+       
       </section>
 
       {/* Stats Section */}
