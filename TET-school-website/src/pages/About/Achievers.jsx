@@ -73,15 +73,17 @@ const Achievers = () => {
 
         {/* Achievers Grid */}
         <div className="p-6 sm:p-8 bg-gradient-to-br from-gray-50 to-orange-50/30">
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
             {achievers.map((achiever, index) => (
               <div
                 key={index}
-                className="group bg-white rounded-xl shadow-md hover:shadow-2xl transition-all duration-300 overflow-hidden border border-gray-200 hover:border-transparent transform hover:-translate-y-2"
+                className={`group bg-white rounded-xl shadow-md hover:shadow-2xl transition-all duration-300 overflow-hidden border border-gray-200 hover:border-transparent transform hover:-translate-y-2 ${
+                  index === 4 ? 'lg:col-start-2' : index === 5 ? 'lg:col-start-3' : ''
+                }`}
               >
                 {/* Image Container */}
                 <div className="relative overflow-hidden bg-gradient-to-br from-gray-100 to-gray-200">
-                  <div className="aspect-[3/4] overflow-hidden">
+                  <div className="aspect-[4/5] overflow-hidden">
                     <img
                       src={achiever.image}
                       alt={achiever.name}
