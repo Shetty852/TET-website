@@ -1,4 +1,4 @@
-import { useEffect, useState, useRef, useCallback } from 'react';
+import { useEffect, useState } from 'react';
 import { useSearchParams } from 'react-router-dom';
 import OurSchool from './OurSchool';
 import ManagementTeam from './ManagementTeam';
@@ -14,7 +14,8 @@ import selfCert from './Assets/Certificates/SELF CERTIFICATE.png';
 const About = () => {
   const [searchParams] = useSearchParams();
   const section = searchParams.get('section');
-  const certificatesPerView = 1;
+  const [selectedCertificate, setSelectedCertificate] = useState(null);
+  
   const certificates = [
     { id: 1, image: affiliationCert, title: 'CBSE Affiliation Certificate 2025-26' },
     { id: 2, image: buildingSafetyCert, title: 'Building Safety Certificate' },
@@ -23,17 +24,6 @@ const About = () => {
     { id: 5, image: landCert, title: 'Land Certificate' },
     { id: 6, image: selfCert, title: 'Self Declaration Certificate' }
   ];
-  const extendedCertificates = [
-    ...certificates.slice(-certificatesPerView),
-    ...certificates,
-    ...certificates,
-    ...certificates.slice(0, certificatesPerView),
-  ];
-  const initialIndex = certificatesPerView;
-  
-  const [currentSlide, setCurrentSlide] = useState(initialIndex);
-  const [isTransitioning, setIsTransitioning] = useState(false);
-  const carouselRef = useRef(null);
 
   useEffect(() => {
     // Scroll to top immediately on mount
@@ -49,105 +39,6 @@ const About = () => {
       }, 100);
     }
   }, [section]);
-
-  const getCardWidth = () => {
-    if (typeof window !== 'undefined') {
-      if (window.innerWidth < 640) return window.innerWidth - 60; // Mobile
-      if (window.innerWidth < 1024) return 520; // Tablet
-      return 680; // Desktop
-    }
-    return 680;
-  };
-
-  const getGap = () => {
-    if (typeof window !== 'undefined') {
-      return window.innerWidth < 640 ? 12 : 24;
-    }
-    return 24;
-  };
-
-  const handleNext = useCallback(() => {
-    if (isTransitioning) return;
-
-    setIsTransitioning(true);
-    setCurrentSlide((prev) => prev + 1);
-
-    setTimeout(() => {
-      setCurrentSlide((prev) => {
-        if (prev >= initialIndex + certificates.length) {
-          if (carouselRef.current) {
-            carouselRef.current.style.transition = "none";
-            setTimeout(() => {
-              if (carouselRef.current) {
-                carouselRef.current.style.transition = "transform 0.5s ease-in-out";
-              }
-            }, 50);
-          }
-          return initialIndex;
-        }
-        return prev;
-      });
-      setIsTransitioning(false);
-    }, 500);
-  }, [isTransitioning, initialIndex, certificates.length]);
-
-  // Auto-slide every 5 seconds
-  useEffect(() => {
-    const autoSlideInterval = setInterval(() => {
-      handleNext();
-    }, 5000);
-
-    return () => clearInterval(autoSlideInterval);
-  }, [handleNext]);
-
-  const handlePrev = useCallback(() => {
-    if (isTransitioning) return;
-
-    setIsTransitioning(true);
-    setCurrentSlide((prev) => prev - 1);
-
-    setTimeout(() => {
-      setCurrentSlide((prev) => {
-        if (prev < initialIndex) {
-          if (carouselRef.current) {
-            carouselRef.current.style.transition = "none";
-            setTimeout(() => {
-              if (carouselRef.current) {
-                carouselRef.current.style.transition = "transform 0.5s ease-in-out";
-              }
-            }, 50);
-          }
-          return initialIndex + certificates.length - 1;
-        }
-        return prev;
-      });
-      setIsTransitioning(false);
-    }, 500);
-  }, [isTransitioning, initialIndex, certificates.length]);
-
-  const handleKeyDown = useCallback(
-    (event) => {
-      if (event.key === "ArrowLeft") {
-        handlePrev();
-      } else if (event.key === "ArrowRight") {
-        handleNext();
-      }
-    },
-    [handleNext, handlePrev]
-  );
-
-  const getDotIndex = () => {
-    return (currentSlide - initialIndex + certificates.length) % certificates.length;
-  };
-
-  const goToSlide = useCallback(
-    (index) => {
-      if (!isTransitioning) {
-        setCurrentSlide(initialIndex + index);
-      }
-    },
-    [isTransitioning, initialIndex]
-  );
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-gray-50 via-blue-50/30 to-purple-50/20 py-6 sm:py-8">
@@ -190,130 +81,126 @@ const About = () => {
           <Facilities />
         </div>
 
-        {/* Certificates Carousel Section */}
+        {/* Certificates Section */}
         <div className="mt-6 sm:mt-8">
-          <div className="bg-gradient-to-br from-blue-50 via-white to-purple-50 rounded-2xl sm:rounded-3xl shadow-2xl overflow-hidden p-5 sm:p-6 border border-blue-200/50">
+          <div className="bg-white rounded-2xl sm:rounded-3xl shadow-2xl overflow-hidden border border-gray-200">
             {/* Section Header */}
-            <div className="text-center mb-5 sm:mb-6">
-              <div className="inline-block">
-                <h2 className="text-2xl sm:text-3xl font-bold bg-gradient-to-r from-primary-600 via-blue-600 to-purple-600 bg-clip-text text-transparent mb-2">
-                  Our Certifications & Accreditations
-                </h2>
-                <div className="h-1 bg-gradient-to-r from-primary-500 via-blue-500 to-purple-500 rounded-full mx-auto w-3/4"></div>
-              </div>
-              <p className="text-gray-600 text-sm sm:text-base max-w-2xl mx-auto mt-3">
+            <div className="bg-gradient-to-br from-primary-600 via-primary-700 to-primary-900 py-6 sm:py-8 px-4">
+              <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-white text-center tracking-wide">
+                Our Certifications & Accreditations
+              </h2>
+              <p className="text-white/90 text-sm sm:text-base text-center mt-2 max-w-2xl mx-auto">
                 Recognized and certified for maintaining the highest standards in education and safety
               </p>
             </div>
 
-            {/* Carousel Container */}
-            <div
-              className="relative"
-              onKeyDown={handleKeyDown}
-              tabIndex={0}
-              role="region"
-              aria-label="Certificates carousel"
-            >
-              <div className="flex items-center justify-center gap-4">
-                {/* Left Arrow */}
-                <button
-                  onClick={handlePrev}
-                  disabled={isTransitioning}
-                  className="p-2 sm:p-3 rounded-full bg-gradient-to-br from-primary-500 to-blue-600 hover:from-primary-600 hover:to-blue-700 shadow-lg hover:shadow-xl transition-all duration-300 group disabled:opacity-50 focus:outline-none focus:ring-2 focus:ring-primary-400 flex-shrink-0 z-10 transform hover:scale-110"
-                  aria-label="Previous certificate"
-                >
-                  <svg className="w-5 h-5 sm:w-6 sm:h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M15 19l-7-7 7-7" />
-                  </svg>
-                </button>
-
-                {/* Certificates Display */}
-                <div className="flex-1 overflow-hidden">
+            {/* Certificates Grid */}
+            <div className="p-6 sm:p-8 md:p-10 bg-gradient-to-br from-gray-50 to-white">
+              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8 max-w-6xl mx-auto">
+                {certificates.map((certificate) => (
                   <div
-                    ref={carouselRef}
-                    className="flex items-center transition-transform duration-500 ease-in-out"
-                    role="group"
-                    aria-label="Certificate images"
-                    style={{
-                      transform: `translateX(-${currentSlide * (getCardWidth() + getGap())}px)`,
-                      gap: `${getGap()}px`,
-                      width: `${extendedCertificates.length * (getCardWidth() + getGap())}px`,
-                      marginLeft: `calc(50% - ${getCardWidth() / 2}px)`,
-                    }}
+                    key={certificate.id}
+                    className="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-2 border-2 border-gray-200 hover:border-primary-400 group"
                   >
-                    {extendedCertificates.map((certificate, index) => (
-                      <div
-                        key={`${certificate.id}-${index}`}
-                        className="flex-shrink-0"
-                        style={{ width: `${getCardWidth()}px` }}
-                      >
-                        <div className="bg-white rounded-2xl overflow-hidden shadow-xl hover:shadow-2xl transition-all duration-500 border-2 border-transparent hover:border-primary-300 transform hover:-translate-y-2 group">
-                          <div className="aspect-[4/3] bg-gradient-to-br from-blue-50 via-white to-purple-50 p-4 sm:p-5 relative">
-                            <div className="absolute top-3 right-3 bg-gradient-to-br from-primary-500 to-blue-600 text-white px-3 py-1 rounded-full text-xs font-semibold shadow-lg">
-                              Verified ✓
-                            </div>
-                            <img
-                              src={certificate.image}
-                              alt={certificate.title}
-                              className="w-full h-full object-contain transition-transform duration-500 group-hover:scale-105"
-                              loading="lazy"
-                            />
-                          </div>
-                          <div className="p-3 sm:p-4 bg-gradient-to-r from-primary-50 via-blue-50 to-purple-50 border-t-2 border-primary-200">
-                            <h3 className="text-center text-sm sm:text-base font-bold bg-gradient-to-r from-gray-800 to-gray-700 bg-clip-text text-transparent">
-                              {certificate.title}
-                            </h3>
-                          </div>
-                        </div>
+                    {/* Certificate Image */}
+                    <div className="aspect-[4/3] bg-gradient-to-br from-gray-50 to-gray-100 p-4 relative overflow-hidden">
+                      <div className="absolute top-2 right-2 bg-green-500 text-white px-2.5 py-1 rounded-full text-xs font-semibold shadow-lg z-10 flex items-center gap-1">
+                        <span>✓</span> Verified
                       </div>
-                    ))}
+                      <img
+                        src={certificate.image}
+                        alt={certificate.title}
+                        className="w-full h-full object-contain transition-transform duration-500 group-hover:scale-105"
+                      />
+                      <div className="absolute inset-0 bg-gradient-to-t from-black/10 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                    </div>
+
+                    {/* Certificate Info */}
+                    <div className="p-4 border-t-2 border-gray-200 bg-gradient-to-br from-white to-gray-50 group-hover:from-primary-50 group-hover:to-blue-50 transition-all duration-500">
+                      <h3 className="text-sm sm:text-base font-bold text-gray-900 text-center mb-3 min-h-[2.5rem] flex items-center justify-center">
+                        {certificate.title}
+                      </h3>
+                      
+                      {/* View Full Button */}
+                      <button
+                        onClick={() => setSelectedCertificate(certificate)}
+                        className="w-full bg-gradient-to-r from-primary-600 to-blue-600 hover:from-primary-700 hover:to-blue-700 text-white text-sm font-semibold py-2.5 px-4 rounded-lg transition-all duration-300 shadow-md hover:shadow-xl transform hover:scale-105 flex items-center justify-center gap-2"
+                      >
+                        <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z" />
+                        </svg>
+                        View Full Certificate
+                      </button>
+                    </div>
                   </div>
-                </div>
-
-                {/* Right Arrow */}
-                <button
-                  onClick={handleNext}
-                  disabled={isTransitioning}
-                  className="p-2 sm:p-3 rounded-full bg-gradient-to-br from-primary-500 to-blue-600 hover:from-primary-600 hover:to-blue-700 shadow-lg hover:shadow-xl transition-all duration-300 group disabled:opacity-50 focus:outline-none focus:ring-2 focus:ring-primary-400 flex-shrink-0 z-10 transform hover:scale-110"
-                  aria-label="Next certificate"
-                >
-                  <svg className="w-5 h-5 sm:w-6 sm:h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M9 5l7 7-7 7" />
-                  </svg>
-                </button>
-              </div>
-
-              {/* Dots Navigation */}
-              <div
-                className="flex justify-center mt-5 sm:mt-6 gap-2"
-                role="tablist"
-                aria-label="Carousel navigation"
-              >
-                {certificates.map((_, index) => (
-                  <button
-                    key={index}
-                    onClick={() => goToSlide(index)}
-                    className={`transition-all duration-300 rounded-full focus:outline-none focus:ring-2 focus:ring-primary-400 ${
-                      index === getDotIndex()
-                        ? 'w-8 sm:w-10 h-2.5 sm:h-3 bg-gradient-to-r from-primary-500 to-blue-600 shadow-md scale-110'
-                        : 'w-2.5 sm:w-3 h-2.5 sm:h-3 bg-gray-300 hover:bg-gradient-to-r hover:from-primary-300 hover:to-blue-400'
-                    }`}
-                    role="tab"
-                    aria-selected={index === getDotIndex()}
-                    aria-label={`Go to certificate ${index + 1}`}
-                  />
                 ))}
-              </div>
-
-              {/* Counter */}
-              <div className="text-center mt-3 sm:mt-4">
-                <span className="inline-block bg-gradient-to-r from-primary-500 to-blue-600 text-white px-4 py-1.5 rounded-full text-xs sm:text-sm font-semibold shadow-md">
-                  {getDotIndex() + 1} / {certificates.length}
-                </span>
               </div>
             </div>
           </div>
         </div>
+
+        {/* Certificate Modal */}
+        {selectedCertificate && (
+          <div
+            className="fixed inset-0 bg-black/80 backdrop-blur-sm z-50 flex items-center justify-center p-4 animate-fadeIn"
+            onClick={() => setSelectedCertificate(null)}
+          >
+            <div
+              className="relative bg-white rounded-2xl shadow-2xl max-w-5xl w-full max-h-[90vh] overflow-auto"
+              onClick={(e) => e.stopPropagation()}
+            >
+              {/* Modal Header */}
+              <div className="sticky top-0 bg-gradient-to-r from-primary-600 to-blue-600 text-white p-4 sm:p-6 rounded-t-2xl z-10 flex items-center justify-between">
+                <h3 className="text-lg sm:text-xl font-bold pr-4">
+                  {selectedCertificate.title}
+                </h3>
+                <button
+                  onClick={() => setSelectedCertificate(null)}
+                  className="flex-shrink-0 w-10 h-10 flex items-center justify-center rounded-full bg-white/20 hover:bg-white/30 transition-all duration-300 transform hover:scale-110 hover:rotate-90"
+                  aria-label="Close modal"
+                >
+                  <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+                  </svg>
+                </button>
+              </div>
+
+              {/* Modal Content */}
+              <div className="p-4 sm:p-6 bg-gradient-to-br from-gray-50 to-white">
+                <div className="bg-white rounded-xl shadow-lg p-4 sm:p-6">
+                  <img
+                    src={selectedCertificate.image}
+                    alt={selectedCertificate.title}
+                    className="w-full h-auto"
+                  />
+                </div>
+                
+                {/* Download/Print Buttons */}
+                <div className="mt-6 flex flex-wrap gap-3 justify-center">
+                  <button
+                    onClick={() => window.open(selectedCertificate.image, '_blank')}
+                    className="bg-gradient-to-r from-green-600 to-emerald-600 hover:from-green-700 hover:to-emerald-700 text-white font-semibold py-3 px-6 rounded-lg transition-all duration-300 shadow-md hover:shadow-xl transform hover:scale-105 flex items-center gap-2"
+                  >
+                    <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4" />
+                    </svg>
+                    Open in New Tab
+                  </button>
+                  <button
+                    onClick={() => setSelectedCertificate(null)}
+                    className="bg-gradient-to-r from-gray-600 to-gray-700 hover:from-gray-700 hover:to-gray-800 text-white font-semibold py-3 px-6 rounded-lg transition-all duration-300 shadow-md hover:shadow-xl transform hover:scale-105 flex items-center gap-2"
+                  >
+                    <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+                    </svg>
+                    Close
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        )}
       </div>
     </div>
   );
