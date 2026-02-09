@@ -35,8 +35,8 @@ const OurSchool = () => {
             <p className="text-lg font-bold text-indigo-900">55</p>
           </div>
           <div className="bg-gradient-to-br from-orange-50 to-orange-100 p-2 rounded-lg text-center border-l-2 border-orange-500 hover:shadow-lg hover:-translate-y-1 transition-all duration-300 cursor-default">
-            <p className="text-xs text-orange-700 font-semibold">Students Growth</p>
-            <p className="text-lg font-bold text-orange-900">34+</p>
+            <p className="text-xs text-orange-700 font-semibold">Teaching Staff</p>
+            <p className="text-lg font-bold text-orange-900">20+</p>
           </div>
         </div>
 

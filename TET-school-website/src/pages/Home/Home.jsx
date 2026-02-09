@@ -70,7 +70,6 @@ const Home = () => {
               </span>
             </h1>
 
-
             <p className="text-sm sm:text-base md:text-lg lg:text-xl xl:text-2xl max-w-4xl mx-auto text-primary-50 leading-relaxed px-4 sm:px-6 animate-fadeIn">
               Located in Hunsur, Karnataka - Where quality CBSE education meets innovation. We nurture young minds from Nursery to Class 10,
               creating confident, creative, and compassionate leaders of tomorrow.
@@ -96,20 +95,15 @@ const Home = () => {
             </div>
           </div>
         </div>
-
-
       </section>
 
       <section className="py-12 sm:py-16 bg-white scroll-animate animate-hidden">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-
           {/* Heading */}
           <div className="text-center mb-10">
             <h2 className="text-3xl sm:text-4xl md:text-5xl font-extrabold tracking-tight leading-[1.2] py-1 text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-indigo-600">
               Why Choose Us
             </h2>
-
-
             <p className="mt-4 text-base sm:text-lg text-gray-600 font-medium leading-relaxed max-w-2xl mx-auto">
               World-class laboratories that support hands-on learning, innovation, and real-world scientific exploration.
             </p>
@@ -123,14 +117,12 @@ const Home = () => {
               className="w-full h-40 sm:h-56 object-cover rounded-lg shadow-md scroll-animate animate-hidden"
               style={{animationDelay: '0.1s'}}
             />
-
             <img
               src={lab2}
               alt="Computer Lab"
               className="w-full h-40 sm:h-56 object-cover rounded-lg shadow-md scroll-animate animate-hidden"
               style={{animationDelay: '0.2s'}}
             />
-
             <img
               src={lab3}
               alt="Math Lab"
@@ -138,28 +130,22 @@ const Home = () => {
               style={{animationDelay: '0.3s'}}
             />
           </div>
-
         </div>
       </section>
 
       {/* Vision & Mission Section */}
       <section className="py-12 sm:py-16 bg-gray-50 scroll-animate animate-hidden">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-
           <div className="bg-white rounded-xl sm:rounded-2xl shadow-xl overflow-hidden">
-
             {/* Header */}
             <div className="bg-gradient-to-r from-blue-600 to-indigo-700 p-4 text-white text-center">
               <h2 className="text-2xl sm:text-3xl font-bold">
                 Vision & Mission
               </h2>
             </div>
-
             <div className="p-4 sm:p-6">
-
               {/* Vision & Mission */}
               <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
-
                 {/* Vision */}
                 <div className="bg-gradient-to-br from-blue-50 to-indigo-50 rounded-lg p-4 border-l-4 border-blue-600">
                   <h3 className="text-xl font-bold text-blue-700 mb-2">
@@ -181,17 +167,11 @@ const Home = () => {
                     character development, and holistic growth through dedicated mentorship.
                   </p>
                 </div>
-
               </div>
-
             </div>
           </div>
-
         </div>
       </section>
-
-
-
 
       {/* CTA Section */}
       <section className="relative py-12 sm:py-16 lg:py-20 bg-gradient-to-br from-primary-600 to-primary-800 text-white overflow-hidden scroll-animate animate-hidden">
@@ -207,10 +187,7 @@ const Home = () => {
             Discover how Talent Public School can be the perfect place for your child's educational journey.
             Visit our campus in Hunsur and see the difference firsthand.
           </p>
-
-
           <div className="mt-4 pt-2">
-
             <p className="text-primary-100 mb-4 text-sm sm:text-base">
               Visit us or get in touch!
             </p>
