@@ -15,6 +15,7 @@ const About = () => {
   const [searchParams] = useSearchParams();
   const section = searchParams.get('section');
   const [selectedCertificate, setSelectedCertificate] = useState(null);
+  const [previewIndex, setPreviewIndex] = useState(0);
   
   const certificates = [
     { id: 1, image: affiliationCert, title: 'CBSE Affiliation Certificate 2025-26' },
@@ -24,6 +25,14 @@ const About = () => {
     { id: 5, image: landCert, title: 'Land Certificate' },
     { id: 6, image: selfCert, title: 'Self Declaration Certificate' }
   ];
+
+  const handlePrevCert = () => {
+    setPreviewIndex((prev) => (prev === 0 ? certificates.length - 1 : prev - 1));
+  };
+
+  const handleNextCert = () => {
+    setPreviewIndex((prev) => (prev === certificates.length - 1 ? 0 : prev + 1));
+  };
 
   useEffect(() => {
     // Scroll to top immediately on mount
@@ -82,59 +91,109 @@ const About = () => {
         </div>
 
         {/* Certificates Section */}
-        <div className="mt-6 sm:mt-8">
-          <div className="bg-white rounded-2xl sm:rounded-3xl shadow-2xl overflow-hidden border border-gray-200">
+        <div className="mt-8 sm:mt-12">
+          <div className="bg-white rounded-2xl shadow-xl overflow-hidden border border-gray-200">
             {/* Section Header */}
-            <div className="bg-gradient-to-br from-primary-600 via-primary-700 to-primary-900 py-6 sm:py-8 px-4">
-              <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-white text-center tracking-wide">
+            <div className="bg-gradient-to-r from-primary-600 via-blue-600 to-purple-600 py-6 px-6">
+              <h2 className="text-2xl sm:text-3xl font-bold text-white text-center mb-2">
                 Our Certifications & Accreditations
               </h2>
-              <p className="text-white/90 text-sm sm:text-base text-center mt-2 max-w-2xl mx-auto">
+              <div className="h-1 bg-gradient-to-r from-transparent via-white/50 to-transparent rounded-full w-3/4 mx-auto"></div>
+              <p className="text-white/90 text-sm text-center mt-3 max-w-2xl mx-auto">
                 Recognized and certified for maintaining the highest standards in education and safety
               </p>
             </div>
 
-            {/* Certificates Grid */}
-            <div className="p-6 sm:p-8 md:p-10 bg-gradient-to-br from-gray-50 to-white">
-              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8 max-w-6xl mx-auto">
-                {certificates.map((certificate) => (
-                  <div
-                    key={certificate.id}
-                    className="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-2 border-2 border-gray-200 hover:border-primary-400 group"
-                  >
-                    {/* Certificate Image */}
-                    <div className="aspect-[4/3] bg-gradient-to-br from-gray-50 to-gray-100 p-4 relative overflow-hidden">
-                      <div className="absolute top-2 right-2 bg-green-500 text-white px-2.5 py-1 rounded-full text-xs font-semibold shadow-lg z-10 flex items-center gap-1">
-                        <span>✓</span> Verified
-                      </div>
-                      <img
-                        src={certificate.image}
-                        alt={certificate.title}
-                        className="w-full h-full object-contain transition-transform duration-500 group-hover:scale-105"
-                      />
-                      <div className="absolute inset-0 bg-gradient-to-t from-black/10 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
-                    </div>
-
-                    {/* Certificate Info */}
-                    <div className="p-4 border-t-2 border-gray-200 bg-gradient-to-br from-white to-gray-50 group-hover:from-primary-50 group-hover:to-blue-50 transition-all duration-500">
-                      <h3 className="text-sm sm:text-base font-bold text-gray-900 text-center mb-3 min-h-[2.5rem] flex items-center justify-center">
+            {/* Split Layout Container */}
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 p-6 bg-gray-50">
+              {/* Left Side - Certificates List */}
+              <div className="bg-white rounded-xl shadow-md border border-gray-200 overflow-hidden">
+                <div className="bg-gray-100 border-b border-gray-200 px-4 py-3">
+                  <h3 className="text-lg font-bold text-gray-900">Certificates List</h3>
+                </div>
+                <div className="divide-y divide-gray-200 max-h-[400px] overflow-y-auto">
+                  {certificates.map((certificate, index) => (
+                    <div
+                      key={certificate.id}
+                      className="px-4 py-3 hover:bg-gray-50 transition-colors duration-200 flex items-center justify-between"
+                    >
+                      <span className="text-sm font-medium text-gray-900 flex-1">
                         {certificate.title}
-                      </h3>
-                      
-                      {/* View Full Button */}
+                      </span>
                       <button
-                        onClick={() => setSelectedCertificate(certificate)}
-                        className="w-full bg-gradient-to-r from-primary-600 to-blue-600 hover:from-primary-700 hover:to-blue-700 text-white text-sm font-semibold py-2.5 px-4 rounded-lg transition-all duration-300 shadow-md hover:shadow-xl transform hover:scale-105 flex items-center justify-center gap-2"
+                        onClick={() => {
+                          setPreviewIndex(index);
+                          setSelectedCertificate(certificate);
+                        }}
+                        className="text-primary-600 hover:text-primary-700 text-sm font-semibold ml-4 whitespace-nowrap border-b border-primary-600 hover:border-primary-700 transition-colors duration-200"
                       >
-                        <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
-                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z" />
-                        </svg>
-                        View Full Certificate
+                        Click here
                       </button>
                     </div>
+                  ))}
+                </div>
+              </div>
+
+              {/* Right Side - Preview Panel */}
+              <div className="bg-white rounded-xl shadow-md border border-gray-200 overflow-hidden">
+                <div className="bg-gray-100 border-b border-gray-200 px-4 py-3">
+                  <h3 className="text-lg font-bold text-gray-900">Preview</h3>
+                </div>
+                <div className="p-4">
+                  {/* Image Carousel */}
+                  <div className="relative">
+                    {/* Verified Badge */}
+                    <div className="absolute top-3 right-3 bg-primary-600 text-white px-3 py-1.5 rounded-full text-xs font-bold shadow-lg z-20 flex items-center gap-1.5">
+                      <span>Verified</span>
+                      <svg className="w-3.5 h-3.5" fill="currentColor" viewBox="0 0 20 20">
+                        <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
+                      </svg>
+                    </div>
+
+                    {/* Arrow Buttons and Image */}
+                    <div className="flex items-center gap-2">
+                      {/* Left Arrow */}
+                      <button
+                        onClick={handlePrevCert}
+                        className="flex-shrink-0 p-2 rounded-full bg-gray-200 hover:bg-gray-300 transition-colors duration-200"
+                        aria-label="Previous certificate"
+                      >
+                        <svg className="w-5 h-5 text-gray-700" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M15 19l-7-7 7-7" />
+                        </svg>
+                      </button>
+
+                      {/* Certificate Image */}
+                      <div className="flex-1 bg-gray-100 rounded-lg overflow-hidden shadow-inner">
+                        <div className="aspect-[4/3] p-3">
+                          <img
+                            src={certificates[previewIndex].image}
+                            alt={certificates[previewIndex].title}
+                            className="w-full h-full object-contain"
+                          />
+                        </div>
+                      </div>
+
+                      {/* Right Arrow */}
+                      <button
+                        onClick={handleNextCert}
+                        className="flex-shrink-0 p-2 rounded-full bg-gray-200 hover:bg-gray-300 transition-colors duration-200"
+                        aria-label="Next certificate"
+                      >
+                        <svg className="w-5 h-5 text-gray-700" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M9 5l7 7-7 7" />
+                        </svg>
+                      </button>
+                    </div>
+
+                    {/* Certificate Title */}
+                    <div className="mt-3 text-center">
+                      <p className="text-sm font-semibold text-gray-900">
+                        {certificates[previewIndex].title}
+                      </p>
+                    </div>
                   </div>
-                ))}
+                </div>
               </div>
             </div>
           </div>
@@ -143,60 +202,69 @@ const About = () => {
         {/* Certificate Modal */}
         {selectedCertificate && (
           <div
-            className="fixed inset-0 bg-black/80 backdrop-blur-sm z-50 flex items-center justify-center p-4 animate-fadeIn"
+            className="fixed inset-0 bg-black/90 backdrop-blur-sm z-50 flex items-center justify-center p-4 animate-fadeIn"
             onClick={() => setSelectedCertificate(null)}
           >
             <div
-              className="relative bg-white rounded-2xl shadow-2xl max-w-5xl w-full max-h-[90vh] overflow-auto"
+              className="relative bg-white rounded-2xl shadow-2xl max-w-6xl w-full max-h-[95vh] overflow-hidden animate-slideIn"
               onClick={(e) => e.stopPropagation()}
             >
               {/* Modal Header */}
-              <div className="sticky top-0 bg-gradient-to-r from-primary-600 to-blue-600 text-white p-4 sm:p-6 rounded-t-2xl z-10 flex items-center justify-between">
-                <h3 className="text-lg sm:text-xl font-bold pr-4">
-                  {selectedCertificate.title}
-                </h3>
+              <div className="bg-gradient-to-r from-primary-600 to-blue-600 text-white p-5 flex items-center justify-between border-b-4 border-white/10">
+                <div className="flex items-center gap-3">
+                  {/* Verified Badge */}
+                  <div className="bg-white/20 backdrop-blur-sm px-3 py-1.5 rounded-full text-xs font-bold flex items-center gap-1.5">
+                    <span>Verified</span>
+                    <svg className="w-3.5 h-3.5" fill="currentColor" viewBox="0 0 20 20">
+                      <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
+                    </svg>
+                  </div>
+                  <h3 className="text-xl font-bold">
+                    {selectedCertificate.title}
+                  </h3>
+                </div>
                 <button
                   onClick={() => setSelectedCertificate(null)}
-                  className="flex-shrink-0 w-10 h-10 flex items-center justify-center rounded-full bg-white/20 hover:bg-white/30 transition-all duration-300 transform hover:scale-110 hover:rotate-90"
+                  className="flex-shrink-0 w-10 h-10 flex items-center justify-center rounded-full bg-white/10 hover:bg-white/20 transition-all duration-300 transform hover:scale-110"
                   aria-label="Close modal"
                 >
                   <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M6 18L18 6M6 6l12 12" />
                   </svg>
                 </button>
               </div>
 
               {/* Modal Content */}
-              <div className="p-4 sm:p-6 bg-gradient-to-br from-gray-50 to-white">
-                <div className="bg-white rounded-xl shadow-lg p-4 sm:p-6">
+              <div className="overflow-auto max-h-[calc(95vh-150px)] bg-gray-50 p-6">
+                <div className="bg-white rounded-xl shadow-lg p-4">
                   <img
                     src={selectedCertificate.image}
                     alt={selectedCertificate.title}
                     className="w-full h-auto"
                   />
                 </div>
-                
-                {/* Download/Print Buttons */}
-                <div className="mt-6 flex flex-wrap gap-3 justify-center">
-                  <button
-                    onClick={() => window.open(selectedCertificate.image, '_blank')}
-                    className="bg-gradient-to-r from-green-600 to-emerald-600 hover:from-green-700 hover:to-emerald-700 text-white font-semibold py-3 px-6 rounded-lg transition-all duration-300 shadow-md hover:shadow-xl transform hover:scale-105 flex items-center gap-2"
-                  >
-                    <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4" />
-                    </svg>
-                    Open in New Tab
-                  </button>
-                  <button
-                    onClick={() => setSelectedCertificate(null)}
-                    className="bg-gradient-to-r from-gray-600 to-gray-700 hover:from-gray-700 hover:to-gray-800 text-white font-semibold py-3 px-6 rounded-lg transition-all duration-300 shadow-md hover:shadow-xl transform hover:scale-105 flex items-center gap-2"
-                  >
-                    <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
-                    </svg>
-                    Close
-                  </button>
-                </div>
+              </div>
+
+              {/* Modal Footer */}
+              <div className="bg-white border-t-2 border-gray-100 p-4 flex gap-3 justify-center">
+                <button
+                  onClick={() => window.open(selectedCertificate.image, '_blank')}
+                  className="bg-gradient-to-r from-green-600 to-emerald-600 hover:from-green-700 hover:to-emerald-700 text-white font-semibold py-2.5 px-6 rounded-lg transition-all duration-300 shadow-md hover:shadow-lg transform hover:scale-105 flex items-center gap-2"
+                >
+                  <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+                  </svg>
+                  Open in New Tab
+                </button>
+                <button
+                  onClick={() => setSelectedCertificate(null)}
+                  className="bg-gradient-to-r from-gray-600 to-gray-700 hover:from-gray-700 hover:to-gray-800 text-white font-semibold py-2.5 px-6 rounded-lg transition-all duration-300 shadow-md hover:shadow-lg transform hover:scale-105 flex items-center gap-2"
+                >
+                  <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+                  </svg>
+                  Close
+                </button>
               </div>
             </div>
           </div>
