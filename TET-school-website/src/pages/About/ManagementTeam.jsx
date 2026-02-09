@@ -25,28 +25,28 @@ const ManagementTeam = () => {
     {
       id: 3,
       name: "Krishna Murthy H R",
-      designation: "Founder Director",
+      designation: "Trustee",
       image: krishnaMurthyImage,
       order: 3
     },
     {
       id: 4,
       name: "Naveen Rai N",
-      designation: "Founder Director",
+      designation: "Trustee",
       image: naveenRaiImage,
       order: 4
     },
     {
       id: 5,
       name: "Manjunatha R N",
-      designation: "Director",
+      designation: "Trustee",
       image: manjunathaRNImage,
       order: 5
     },
     {
       id: 6,
       name: "Srinath H P",
-      designation: "Director",
+      designation: "Trustee",
       image: srinathImage,
       order: 6
     },
