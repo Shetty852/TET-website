@@ -15,8 +15,8 @@ const Phone = () => {
 
       <div className="space-y-4 sm:space-y-5">
         <div className="border border-primary-100 border-l-4 border-l-primary-600 rounded-lg pl-4 sm:pl-6 pr-4 sm:pr-6 py-3 sm:py-4 shadow-sm transition-all duration-300 hover:scale-[1.02] hover:shadow-md">
-          <h3 className="font-semibold text-lg text-gray-800 mb-2">School Main Office</h3>
-          <a href="tel:+918861186207" className="text-2xl font-bold text-primary-600 mb-1 hover:underline block">+91 88611 86207</a>
+          <h3 className="font-semibold text-lg text-gray-800 mb-2">Srinath H P</h3>
+          <a href="tel:+918861186207" className="text-2xl font-bold text-primary-600 mb-1 hover:underline block">+91 9448380077</a>
           <p className="text-gray-600 text-sm">Monday - Saturday: 9:00 AM - 4:50 PM</p>
         </div>
 
@@ -27,11 +27,11 @@ const Phone = () => {
           <p className="text-gray-600 text-sm">For academic matters</p>
         </div>
 
-        <div className="border border-primary-100 border-l-4 border-l-primary-400 rounded-lg pl-4 sm:pl-6 pr-4 sm:pr-6 py-3 sm:py-4 shadow-sm transition-all duration-300 hover:scale-[1.02] hover:shadow-md">
+        {/* <div className="border border-primary-100 border-l-4 border-l-primary-400 rounded-lg pl-4 sm:pl-6 pr-4 sm:pr-6 py-3 sm:py-4 shadow-sm transition-all duration-300 hover:scale-[1.02] hover:shadow-md">
           <h3 className="font-semibold text-lg text-gray-800 mb-2">Vice Principal</h3>
           <a href="tel:+919480192290" className="text-2xl font-bold text-primary-600 mb-1 hover:underline block">+91 94801 92290</a>
           <p className="text-gray-600 text-sm">For administrative inquiries</p>
-        </div>
+        </div> */}
 
         <div className="bg-primary-50 border border-primary-100 p-4 sm:p-6 rounded-lg mt-6 shadow-sm transition-all duration-300 hover:scale-[1.01] hover:shadow-md">
           <h3 className="font-semibold text-gray-800 mb-3">Office Hours</h3>

@@ -5,9 +5,15 @@ import lab1 from './assets/Lab image1.webp';
 import lab2 from './assets/Lab image2.webp';
 import lab3 from './assets/Lab image3.webp';
 
+import Gallery from '../../components/Gallery';
 
 const Home = () => {
   const observerRef = useRef(null);
+
+  useEffect(() => {
+    // Scroll to top when component mounts
+    window.scrollTo(0, 0);
+  }, []);
 
   useEffect(() => {
     // Create intersection observer for scroll animations
@@ -152,8 +158,8 @@ const Home = () => {
                     Our Vision
                   </h3>
                   <p className="text-gray-700 text-sm leading-relaxed">
-                    Creating an educational ecosystem where every student’s potential is discovered,
-                    nurtured, and empowered to thrive in a dynamic world through innovation and values.
+                    Talent Public School nurtures young minds, equips students with essential life skills, and prepares them for a successful future.
+                    A truly effective education system promotes academic excellence through a strong curriculum that builds understanding and critical thinking.
                   </p>
                 </div>
 
@@ -163,8 +169,8 @@ const Home = () => {
                     Our Mission
                   </h3>
                   <p className="text-gray-700 text-sm leading-relaxed">
-                    Providing quality CBSE education from Nursery to Class 10, fostering academic excellence,
-                    character development, and holistic growth through dedicated mentorship.
+                    Providing quality CBSE education from Nursery to Class 10, our school fosters holistic student development, academic excellence, and 
+                    responsible citizenship within a nurturing and inclusive environment.
                   </p>
                 </div>
               </div>
@@ -172,6 +178,11 @@ const Home = () => {
           </div>
         </div>
       </section>
+
+      {/* Gallery Section */}
+        <div id="gallery" className="scroll-mt-20">
+          <Gallery />
+        </div>
 
       {/* CTA Section */}
       <section className="relative py-12 sm:py-16 lg:py-20 bg-gradient-to-br from-primary-600 to-primary-800 text-white overflow-hidden scroll-animate animate-hidden">
