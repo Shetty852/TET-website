@@ -1,10 +1,10 @@
-  import principalImage from './Assets/Gulnaz Khanum N(principal).png';
-import srinathImage from './Assets/Srinath H P.png';
-import manjunathImage from './Assets/Manjunath H P.png';
-import naveenRaiImage from './Assets/Naveen Rai N.png';
-import narayanaRaiImage from './Assets/Narayana Rai.png';
-import manjunathaRNImage from './Assets/Manjunatha R N.png';
-import krishnaMurthyImage from './Assets/Krishna Murthy H R.png';
+  import principalImage from './Assets/Gulnaz Khanum N(principal).webp';
+import srinathImage from './Assets/Srinath H P.webp';
+import manjunathImage from './Assets/Manjunath H P.webp';
+import naveenRaiImage from './Assets/Naveen Rai N.webp';
+import narayanaRaiImage from './Assets/Narayana Rai.webp';
+import manjunathaRNImage from './Assets/Manjunatha R N.webp';
+import krishnaMurthyImage from './Assets/Krishna Murthy H R.webp';
 
 const ManagementTeam = () => {
   const managementTeam = [

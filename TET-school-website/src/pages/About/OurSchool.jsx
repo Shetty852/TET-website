@@ -1,4 +1,4 @@
-import principalImg from './Assets/Gulnaz Khanum N(principal).png';
+import principalImg from './Assets/Gulnaz Khanum N(principal).webp';
 import ParliamentCarousel from './ParliamentCarousel';
 
 const OurSchool = () => {

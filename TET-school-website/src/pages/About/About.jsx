@@ -5,12 +5,12 @@ import ManagementTeam from './ManagementTeam';
 import VisionMission from './VisionMission';
 import Facilities from './Facilities';
 import Achievers from './Achievers';
-import affiliationCert from './Assets/Certificates/AFFILIATION 20256-26.png';
-import buildingSafetyCert from './Assets/Certificates/BUILDING SAFETY.png';
-import drinkingWaterCert from './Assets/Certificates/DRINKING WATER.png';
-import fireSafetyCert from './Assets/Certificates/FIRE SAFETY.png';
-import landCert from './Assets/Certificates/LAND CERTIFICATE.png';
-import selfCert from './Assets/Certificates/SELF CERTIFICATE.png';
+import affiliationCert from './Assets/Certificates/AFFILIATION 20256-26.webp';
+import buildingSafetyCert from './Assets/Certificates/BUILDING SAFETY.webp';
+import drinkingWaterCert from './Assets/Certificates/DRINKING WATER.webp';
+import fireSafetyCert from './Assets/Certificates/FIRE SAFETY.webp';
+import landCert from './Assets/Certificates/LAND CERTIFICATE.webp';
+import selfCert from './Assets/Certificates/SELF CERTIFICATE.webp';
 
 const About = () => {
   const [searchParams] = useSearchParams();
